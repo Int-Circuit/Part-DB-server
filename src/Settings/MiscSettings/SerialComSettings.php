@@ -23,22 +23,22 @@ declare(strict_types=1);
 
 namespace App\Settings\MiscSettings;
 
-use Jbtronics\SettingsBundle\Settings\EmbeddedSettings;
+use App\Settings\SettingsIcon;
+use Jbtronics\SettingsBundle\Metadata\EnvVarMode;
 use Jbtronics\SettingsBundle\Settings\Settings;
+use Jbtronics\SettingsBundle\Settings\SettingsParameter;
+use Jbtronics\SettingsBundle\Settings\SettingsTrait;
 use Symfony\Component\Translation\TranslatableMessage as TM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-#[Settings(label: new TM("settings.misc"))]
-class MiscSettings
+#[Settings(label: new TM("settings.misc.serial"))]
+#[SettingsIcon("fa-bolt-lightning")]
+class SerialComSettings
 {
-    #[EmbeddedSettings]
-    public ?KiCadEDASettings $kicadEDA = null;
+    use SettingsTrait;
 
-    #[EmbeddedSettings]
-    public ?ExchangeRateSettings $exchangeRate = null;
 
-    #[EmbeddedSettings]
-    public ?IpnSuggestSettings $ipnSuggestSettings = null;
+    public bool $defaultParameterVisibility = false;
 
-    #[EmbeddedSettings]
-    public ?SerialComSettings $serial = null;
+
 }
