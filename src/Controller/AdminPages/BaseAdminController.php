@@ -34,6 +34,7 @@ use App\Entity\Base\PartsContainingRepositoryInterface;
 use App\Entity\LabelSystem\LabelProcessMode;
 use App\Entity\LabelSystem\LabelProfile;
 use App\Entity\Parameters\AbstractParameter;
+use App\Entity\UserSystem\User;
 use App\Exceptions\AttachmentDownloadException;
 use App\Exceptions\TwigModeException;
 use App\Form\AdminPages\ImportType;
@@ -63,7 +64,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Validator\ConstraintViolationInterface;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 use function Symfony\Component\Translation\t;
@@ -125,6 +125,14 @@ abstract class BaseAdminController extends AbstractController
         return true;
     }
 
+    /**
+     * @return AbstractDBElement[]
+     */
+    protected function getHistoryElements(AbstractNamedDBElement $entity): array
+    {
+        return $this->historyHelper->getAssociatedElements($entity);
+    }
+
     protected function _edit(AbstractNamedDBElement $entity, Request $request, EntityManagerInterface $em, ?string $timestamp = null): Response
     {
         $this->denyAccessUnlessGranted('read', $entity);
@@ -135,7 +143,7 @@ abstract class BaseAdminController extends AbstractController
             $table = $this->dataTableFactory->createFromType(
                 LogDataTable::class,
                 [
-                    'filter_elements' => $this->historyHelper->getAssociatedElements($entity),
+                    'filter_elements' => $this->getHistoryElements($entity),
                     'mode' => 'element_history',
                 ],
                 ['pageLength' => 10]
@@ -196,7 +204,9 @@ abstract class BaseAdminController extends AbstractController
                 $this->commentHelper->setMessage($form['log_comment']->getData());
 
                 //In principle, the form should be disabled, if the edit permission is not granted, but for good measure, we also check it here, before saving changes.
-                $this->denyAccessUnlessGranted('edit', $entity);
+                if (!$entity instanceof User) { //Users entities does not have a simple edit permission, so we skip the check for them
+                    $this->denyAccessUnlessGranted('edit', $entity);
+                }
                 $em->persist($entity);
                 $em->flush();
                 $this->addFlash('success', 'entity.edit_flash');

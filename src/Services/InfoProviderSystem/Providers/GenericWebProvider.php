@@ -25,13 +25,13 @@ namespace App\Services\InfoProviderSystem\Providers;
 
 use App\Exceptions\ProviderIDNotSupportedException;
 use App\Helpers\RandomizeUseragentHttpClient;
+use App\Services\InfoProviderSystem\SubmittedPageStorage;
+use App\Services\InfoProviderSystem\CreateFromUrlHelper;
 use App\Services\InfoProviderSystem\DTOs\ParameterDTO;
 use App\Services\InfoProviderSystem\DTOs\PartDetailDTO;
 use App\Services\InfoProviderSystem\DTOs\PriceDTO;
+use App\Services\InfoProviderSystem\DTOs\ProviderInfoDTO;
 use App\Services\InfoProviderSystem\DTOs\PurchaseInfoDTO;
-use App\Services\InfoProviderSystem\DTOs\SearchResultDTO;
-use App\Services\InfoProviderSystem\PartInfoRetriever;
-use App\Services\InfoProviderSystem\ProviderRegistry;
 use App\Settings\InfoProviderSystem\GenericWebProviderSettings;
 use Brick\Schema\Interfaces\BreadcrumbList;
 use Brick\Schema\Interfaces\ImageObject;
@@ -42,40 +42,47 @@ use Brick\Schema\Interfaces\Thing;
 use Brick\Schema\SchemaReader;
 use Brick\Schema\SchemaTypeList;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\HttpClient\NoPrivateNetworkHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class GenericWebProvider implements InfoProviderInterface
 {
 
+    use FixAndValidateUrlTrait;
+
     public const DISTRIBUTOR_NAME = 'Website';
+    public const PROVIDER_KEY = 'generic_web';
 
     private readonly HttpClientInterface $httpClient;
 
     public function __construct(HttpClientInterface $httpClient, private readonly GenericWebProviderSettings $settings,
-        private readonly ProviderRegistry $providerRegistry, private readonly PartInfoRetriever $infoRetriever,
+        private readonly CreateFromUrlHelper $createFromUrlHelper,
+        private readonly SubmittedPageStorage $browserHtmlStorage,
     )
     {
-        $this->httpClient = (new RandomizeUseragentHttpClient($httpClient))->withOptions(
+        //Use NoPrivateNetworkHttpClient to prevent SSRF vulnerabilities, and RandomizeUseragentHttpClient to make it harder for servers to block us
+        $this->httpClient = (new RandomizeUseragentHttpClient(new NoPrivateNetworkHttpClient($httpClient)))->withOptions(
             [
                 'timeout' => 15,
             ]
         );
     }
 
-    public function getProviderInfo(): array
+    public function getProviderInfo(): ProviderInfoDTO
     {
-        return [
-            'name' => 'Generic Web URL',
-            'description' => 'Tries to extract a part from a given product webpage URL using common metadata standards like JSON-LD and OpenGraph.',
-            //'url' => 'https://example.com',
-            'disabled_help' => 'Enable in settings to use this provider',
-            'settings_class' => GenericWebProviderSettings::class,
-        ];
-    }
-
-    public function getProviderKey(): string
-    {
-        return 'generic_web';
+        return new ProviderInfoDTO(
+            key: self::PROVIDER_KEY,
+            name: 'Generic Web URL',
+            description: 'Tries to extract a part from a given product webpage URL using common metadata standards like JSON-LD and OpenGraph.',
+            disabledHelp: 'Enable in settings to use this provider',
+            settingsClass: GenericWebProviderSettings::class,
+            capabilities: [
+                ProviderCapabilities::BASIC,
+                ProviderCapabilities::PICTURE,
+                ProviderCapabilities::PRICE,
+                ProviderCapabilities::GTIN,
+            ],
+        );
     }
 
     public function isActive(): bool
@@ -83,19 +90,23 @@ class GenericWebProvider implements InfoProviderInterface
         return $this->settings->enabled;
     }
 
-    public function searchByKeyword(string $keyword): array
+    public function searchByKeyword(string $keyword, array $options = []): array
     {
         $url = $this->fixAndValidateURL($keyword);
 
-        //Before loading the page, try to delegate to another provider
-        $delegatedPart = $this->delegateToOtherProvider($url);
-        if ($delegatedPart !== null) {
-            return [$delegatedPart];
+        if (!($options[self::OPTION_SKIP_DELEGATION] ?? false)) {
+            //Before loading the page, try to delegate to another provider
+            $delegatedPart = $this->createFromUrlHelper->delegateToOtherProvider($url, $this);
+            if ($delegatedPart !== null) {
+                return [$delegatedPart];
+            }
         }
 
         try {
+            $new_options = $options;
+            $new_options[self::OPTION_SKIP_DELEGATION] = true; //Skip delegation for the getDetails call to prevent infinite loops
             return [
-                $this->getDetails($keyword, false) //We already tried delegation
+                $this->getDetails($keyword, $new_options)
             ]; } catch (ProviderIDNotSupportedException $e) {
             return [];
         }
@@ -216,7 +227,7 @@ class GenericWebProvider implements InfoProviderInterface
         }
 
         return new PartDetailDTO(
-            provider_key: $this->getProviderKey(),
+            provider_key: self::PROVIDER_KEY,
             provider_id: $url,
             name: $product->name?->toString() ?? $product->alternateName?->toString() ?? $product->mpn?->toString() ?? 'Unknown Name',
             description: $this->getMetaContent($dom, 'og:description') ?? $this->getMetaContent($dom, 'description') ?? '',
@@ -272,84 +283,30 @@ class GenericWebProvider implements InfoProviderInterface
         return null;
     }
 
-    /**
-     * Delegates the URL to another provider if possible, otherwise return null
-     * @param  string  $url
-     * @return SearchResultDTO|null
-     */
-    private function delegateToOtherProvider(string $url): ?SearchResultDTO
-    {
-        //Extract domain from url:
-        $host = parse_url($url, PHP_URL_HOST);
-        if ($host === false || $host === null) {
-            return null;
-        }
 
-        $provider = $this->providerRegistry->getProviderHandlingDomain($host);
-
-        if ($provider !== null && $provider->isActive() && $provider->getProviderKey() !== $this->getProviderKey()) {
-            try {
-                $id = $provider->getIDFromURL($url);
-                if ($id !== null) {
-                    $results = $this->infoRetriever->searchByKeyword($id, [$provider]);
-                    if (count($results) > 0) {
-                        return $results[0];
-                    }
-                }
-                return null;
-            } catch (ProviderIDNotSupportedException $e) {
-                //Ignore and continue
-                return null;
-            }
-        }
-
-        return null;
-    }
-
-    private function fixAndValidateURL(string $url): string
-    {
-        $originalUrl = $url;
-
-        //Add scheme if missing
-        if (!preg_match('/^https?:\/\//', $url)) {
-            //Remove any leading slashes
-            $url = ltrim($url, '/');
-
-            //If the URL starts with https:/ or http:/, add the missing slash
-            //Traefik removes the double slash as secruity measure, so we want to be forgiving and add it back if needed
-            //See https://github.com/Part-DB/Part-DB-server/issues/1296
-            if (preg_match('/^https?:\/[^\/]/', $url)) {
-                $url = preg_replace('/^(https?:)\/([^\/])/', '$1//$2', $url);
-            } else {
-                $url = 'https://'.$url;
-            }
-        }
-
-        //If this is not a valid URL with host, domain and path, throw an exception
-        if (filter_var($url, FILTER_VALIDATE_URL) === false ||
-            parse_url($url, PHP_URL_HOST) === null ||
-            parse_url($url, PHP_URL_PATH) === null) {
-            throw new ProviderIDNotSupportedException("The given ID is not a valid URL: ".$originalUrl);
-        }
-
-        return $url;
-    }
-
-    public function getDetails(string $id, bool $check_for_delegation = true): PartDetailDTO
+    public function getDetails(string $id, array $options = []): PartDetailDTO
     {
         $url = $this->fixAndValidateURL($id);
 
-        if ($check_for_delegation) {
+        if (!($options[self::OPTION_SKIP_DELEGATION] ?? false)) {
             //Before loading the page, try to delegate to another provider
-            $delegatedPart = $this->delegateToOtherProvider($url);
+            $delegatedPart = $this->createFromUrlHelper->delegateToOtherProviderDetails($url, $this);
             if ($delegatedPart !== null) {
-                return $this->infoRetriever->getDetailsForSearchResult($delegatedPart);
+                return $delegatedPart;
             }
         }
 
-        //Try to get the webpage content
-        $response = $this->httpClient->request('GET', $url);
-        $content = $response->getContent();
+        // Use pre-fetched browser HTML if the option is set and a stored page is available for this URL
+        $content = null;
+        if (($token = ($options[self::OPTION_SUBMITTED_PAGE_TOKEN] ?? '')) !== '') {
+            $content = $this->browserHtmlStorage->retrieve($token)?->html;
+        }
+
+        //Otherwise, fetch the page content ourselves
+        if ($content === null) {
+            $response = $this->httpClient->request('GET', $url);
+            $content = $response->getContent();
+        }
 
         $dom = new Crawler($content);
 
@@ -419,7 +376,7 @@ class GenericWebProvider implements InfoProviderInterface
         )];
 
         return new PartDetailDTO(
-            provider_key: $this->getProviderKey(),
+            provider_key: self::PROVIDER_KEY,
             provider_id: $canonicalURL,
             name: $this->getMetaContent($dom, 'og:title') ?? $pageTitle,
             description: $this->getMetaContent($dom, 'og:description') ?? $this->getMetaContent($dom, 'description') ?? '',
@@ -430,13 +387,4 @@ class GenericWebProvider implements InfoProviderInterface
         );
     }
 
-    public function getCapabilities(): array
-    {
-        return [
-            ProviderCapabilities::BASIC,
-            ProviderCapabilities::PICTURE,
-            ProviderCapabilities::PRICE,
-            ProviderCapabilities::GTIN,
-        ];
-    }
 }

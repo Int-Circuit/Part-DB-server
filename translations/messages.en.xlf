@@ -490,7 +490,7 @@ The user will have to set up all two-factor authentication methods again and pri
     <unit id="BtSvnI0" name="entity.delete.confirm_title">
       <segment state="translated">
         <source>entity.delete.confirm_title</source>
-        <target>You really want to delete %name%?</target>
+        <target>Do you really want to delete %name%?</target>
       </segment>
     </unit>
     <unit id="WR9DNyZ" name="entity.delete.message">
@@ -648,6 +648,12 @@ Sub elements will be moved upwards.</target>
         <target>Export this parameter as an EDA field</target>
       </segment>
     </unit>
+    <unit id="Nx6h9XW" name="specifications.eda_symbol_visibility.help">
+      <segment state="translated">
+        <source>specifications.eda_symbol_visibility.help</source>
+        <target>Make this parameter field visible in the schematic symbol</target>
+      </segment>
+    </unit>
     <unit id="XclPxI9" name="specification.create">
       <segment state="translated">
         <source>specification.create</source>
@@ -675,7 +681,7 @@ Sub elements will be moved upwards.</target>
     <unit id="maYlJO8" name="part_list.loading.message">
       <segment state="translated">
         <source>part_list.loading.message</source>
-        <target>This can take a moment. If this message do not disappear, try to reload the page.</target>
+        <target>This can take a moment. If this message does not disappear, try to reload the page.</target>
       </segment>
     </unit>
     <unit id="wKzcAZd" name="vendor.base.javascript_hint">
@@ -699,7 +705,7 @@ Sub elements will be moved upwards.</target>
     <unit id="LN0dVIE" name="loading.message">
       <segment state="translated">
         <source>loading.message</source>
-        <target>This can take a while. If this messages stays for a long time, try to reload the page.</target>
+        <target>This can take a while. If this message stays for a long time, try to reload the page.</target>
       </segment>
     </unit>
     <unit id="8I0Kqhw" name="loading.bar">
@@ -813,7 +819,7 @@ Sub elements will be moved upwards.</target>
     <unit id="bVL1K4d" name="homepage.help.text">
       <segment state="translated">
         <source>homepage.help.text</source>
-        <target>Help and tips can be found in Wiki the &lt;a href="%href%" class="link-external" target="_blank"&gt;GitHub page&lt;/a&gt;</target>
+        <target>Help and tips can be found in the Wiki on the &lt;a href="%href%" class="link-external" target="_blank"&gt;GitHub page&lt;/a&gt;</target>
       </segment>
     </unit>
     <unit id="dnirx4v" name="homepage.forum.caption">
@@ -960,7 +966,7 @@ Sub elements will be moved upwards.</target>
     <unit id="I6zehgT" name="email.pw_reset.message">
       <segment state="translated">
         <source>email.pw_reset.message</source>
-        <target>somebody (hopefully you) requested a reset of your password. If this request was not made by you, ignore this mail.</target>
+        <target>Somebody (hopefully you) requested a reset of your password. If this request was not made by you, ignore this mail.</target>
       </segment>
     </unit>
     <unit id="P8NjvoC" name="email.pw_reset.button">
@@ -1033,6 +1039,18 @@ Sub elements will be moved upwards.</target>
       <segment state="translated">
         <source>part.edit.card_title</source>
         <target>Edit [part]</target>
+      </segment>
+    </unit>
+    <unit id="aznOqRU" name="form.dirty_form.unsaved_changes.title">
+      <segment state="translated">
+        <source>form.dirty_form.unsaved_changes.title</source>
+        <target>Unsaved Changes</target>
+      </segment>
+    </unit>
+    <unit id="dfzAYsv" name="form.dirty_form.unsaved_changes.message">
+      <segment state="translated">
+        <source>form.dirty_form.unsaved_changes.message</source>
+        <target>You have unsaved changes that will be lost if you leave this page. Are you sure you want to continue?</target>
       </segment>
     </unit>
     <unit id="EwY218_" name="part.edit.tab.common">
@@ -2131,7 +2149,7 @@ Also note that without two-factor authentication, your account is no longer as w
     <unit id="h3376Kl" name="tfa_google.step.download">
       <segment state="translated">
         <source>tfa_google.step.download</source>
-        <target>Download an authenticator app (e.g. &lt;a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"&gt;Google Authenticator&lt;/a&gt; oder &lt;a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp"&gt;FreeOTP Authenticator&lt;/a&gt;)</target>
+        <target>Download an authenticator app (e.g. &lt;a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"&gt;Google Authenticator&lt;/a&gt; or &lt;a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp"&gt;FreeOTP Authenticator&lt;/a&gt;)</target>
       </segment>
     </unit>
     <unit id="eriwJoR" name="tfa_google.step.scan">
@@ -2408,13 +2426,13 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
     <unit id="kgA0kPC" name="entity.edit_flash">
       <segment state="translated">
         <source>entity.edit_flash</source>
-        <target>Changes saved successful.</target>
+        <target>Changes saved successfully.</target>
       </segment>
     </unit>
     <unit id="_cDBy1s" name="entity.edit_flash.invalid">
       <segment state="translated">
         <source>entity.edit_flash.invalid</source>
-        <target>Can not save changed. Please check your input!</target>
+        <target>Can not save changes. Please check your input!</target>
       </segment>
     </unit>
     <unit id="vJr16w7" name="entity.created_flash">
@@ -2438,7 +2456,7 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
     <unit id="vlktMB1" name="csfr_invalid">
       <segment state="translated">
         <source>csfr_invalid</source>
-        <target>CSFR Token invalid. Please reload this page or contact an administrator if this message stays.</target>
+        <target>CSRF Token invalid. Please reload this page or contact an administrator if this message stays.</target>
       </segment>
     </unit>
     <unit id="GFvuxVv" name="label_generator.no_entities_found">
@@ -2537,7 +2555,7 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
     <unit id="XFmvSsv" name="part.deleted">
       <segment state="translated">
         <source>part.deleted</source>
-        <target>Part deleted successful.</target>
+        <target>Part deleted successfully.</target>
       </segment>
     </unit>
     <unit id="iKciX31" name="part.created_flash">
@@ -2774,10 +2792,79 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
         <target>Extra</target>
       </segment>
     </unit>
+    <unit id="A.jmuYn" name="log.access_method">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.access_method</source>
+        <target>Access method</target>
+      </segment>
+    </unit>
+    <unit id="1HJ94q3" name="log.access_method.web">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.access_method.web</source>
+        <target>Web UI</target>
+      </segment>
+    </unit>
+    <unit id="Nkv7mDF" name="log.access_method.cli">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.access_method.cli</source>
+        <target>CLI</target>
+      </segment>
+    </unit>
+    <unit id="RrNwi2T" name="log.access_method.api">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.access_method.api</source>
+        <target>REST API</target>
+      </segment>
+    </unit>
+    <unit id="3xmQSNB" name="log.access_method.mcp">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.access_method.mcp</source>
+        <target>MCP</target>
+      </segment>
+    </unit>
+    <unit id="Ne1j4YH" name="log.request_id">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.request_id</source>
+        <target>Request ID</target>
+      </segment>
+    </unit>
+    <unit id="DvJdiEx" name="log.request_id.filter_by">
+      <notes>
+        <note priority="1">new</note>
+      </notes>
+      <segment state="final">
+        <source>log.request_id.filter_by</source>
+        <target>Show all log entries with this request ID</target>
+      </segment>
+    </unit>
     <unit id="EU6XNV5" name="part.table.name">
       <segment state="translated">
         <source>part.table.name</source>
         <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="A1bHPnR" name="part.table.si_value">
+      <segment state="translated">
+        <source>part.table.si_value</source>
+        <target>SI Value</target>
       </segment>
     </unit>
     <unit id="rW_SFJE" name="part.table.id">
@@ -3047,7 +3134,7 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
     <unit id="AdYtBQG" name="attachment.edit.url.help">
       <segment state="translated">
         <source>attachment.edit.url.help</source>
-        <target>You can specify an URL to an external file here, or input an keyword which is used to search in built-in resources (e.g. footprints)</target>
+        <target>You can specify a URL to an external file here, or input a keyword which is used to search in built-in resources (e.g. footprints)</target>
       </segment>
     </unit>
     <unit id="jXplbqd" name="attachment.edit.name">
@@ -4030,7 +4117,7 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
       </notes>
       <segment state="translated">
         <source>validator.noneofitschild.self</source>
-        <target>A element can not be its own parent.</target>
+        <target>An element can not be its own parent.</target>
       </segment>
     </unit>
     <unit id="W90LyFQ" name="validator.noneofitschild.children">
@@ -4190,7 +4277,7 @@ If you have done this incorrectly or if a computer is no longer trusted, you can
       </notes>
       <segment state="translated">
         <source>validator.noLockout</source>
-        <target>You can not withdraw yourself the "change permission" permission, to prevent that you lockout yourself accidentally.</target>
+        <target>You can not withdraw yourself the "change permission" permission, to prevent that you lock yourself out accidentally.</target>
       </segment>
     </unit>
     <unit id="tS2P7Jn" name="attachment_type.edit.filetype_filter">
@@ -4685,7 +4772,7 @@ Element 1 -&gt; Element 1.2</target>
       </notes>
       <segment state="translated">
         <source>storelocation.edit.is_full.label</source>
-        <target>Storelocation full</target>
+        <target>Storage location full</target>
       </segment>
     </unit>
     <unit id="XF4C7ZG" name="storelocation.edit.is_full.help">
@@ -4695,7 +4782,7 @@ Element 1 -&gt; Element 1.2</target>
       </notes>
       <segment state="translated">
         <source>storelocation.edit.is_full.help</source>
-        <target>If this option is selected, it is neither possible to add new [[part]] to this storelocation or to increase the amount of existing [[part]].</target>
+        <target>If this option is selected, it is neither possible to add new [[part]] to this storage location or to increase the amount of existing [[part]].</target>
       </segment>
     </unit>
     <unit id="V1su4ac" name="storelocation.limit_to_existing.label">
@@ -4715,7 +4802,7 @@ Element 1 -&gt; Element 1.2</target>
       </notes>
       <segment state="translated">
         <source>storelocation.limit_to_existing.help</source>
-        <target>If this option is activated, it is not possible to add new [[part]] to this storelocation, but the amount of existing [[part]] can be increased.</target>
+        <target>If this option is activated, it is not possible to add new [[part]] to this storage location, but the amount of existing [[part]] can be increased.</target>
       </segment>
     </unit>
     <unit id="tGVVeof" name="storelocation.only_single_part.label">
@@ -5970,7 +6057,7 @@ Element 1 -&gt; Element 1.2</target>
       </notes>
       <segment state="translated">
         <source>log.type.security.trusted_device_reset</source>
-        <target>Trusted devices resetted</target>
+        <target>Trusted devices reset</target>
       </segment>
     </unit>
     <unit id="a.Le1i0" name="log.type.collection_element_deleted">
@@ -6105,7 +6192,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="uxw7_77" name="group.edit.enforce_2fa.help">
       <segment state="translated">
         <source>group.edit.enforce_2fa.help</source>
-        <target>If this option is enabled, every direct member of this group, has to configure at least one second-factor for authentication. Recommended for administrative groups with much permissions.</target>
+        <target>If this option is enabled, every direct member of this group has to configure at least one second-factor for authentication. Recommended for administrative groups with many permissions.</target>
       </segment>
     </unit>
     <unit id="NwsYm0P" name="selectpicker.nothing_selected">
@@ -6345,7 +6432,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="CdphPiM" name="tools.reel_calc.explanation">
       <segment state="translated">
         <source>tools.reel_calc.explanation</source>
-        <target>This calculator gives you an estimation, how many parts are remaining on an SMD reel. Measure the noted the dimensions on the reel (or use some of the presets) and click "Update" to get an result.</target>
+        <target>This calculator gives you an estimation, how many parts are remaining on an SMD reel. Measure the noted dimensions on the reel (or use the presets) and click "Update" to get a result.</target>
       </segment>
     </unit>
     <unit id="21dEh63" name="perm.tools.reel_calculator">
@@ -7212,10 +7299,28 @@ Element 1 -&gt; Element 1.2</target>
         <target>Subprojects</target>
       </segment>
     </unit>
+    <unit id="_NstC62" name="project.info.total_build_price">
+      <segment state="translated">
+        <source>project.info.total_build_price</source>
+        <target>Total build price</target>
+      </segment>
+    </unit>
+    <unit id="Oof1G0D" name="project.info.per_unit_price">
+      <segment state="translated">
+        <source>project.info.per_unit_price</source>
+        <target>per unit</target>
+      </segment>
+    </unit>
     <unit id="7nV.Cmd" name="project.info.bom_add_parts">
       <segment state="translated">
         <source>project.info.bom_add_parts</source>
         <target>Add BOM entries</target>
+      </segment>
+    </unit>
+    <unit id=".kp4e.H" name="project.bom.export_csv">
+      <segment state="translated">
+        <source>project.bom.export_csv</source>
+        <target>Export as CSV</target>
       </segment>
     </unit>
     <unit id="mo8KjGV" name="project.info.info.label">
@@ -7234,6 +7339,12 @@ Element 1 -&gt; Element 1.2</target>
       <segment state="translated">
         <source>project.bom.price</source>
         <target>Price</target>
+      </segment>
+    </unit>
+    <unit id="gLWQ4cF" name="project.bom.ext_price">
+      <segment state="translated">
+        <source>project.bom.ext_price</source>
+        <target>Extended Price</target>
       </segment>
     </unit>
     <unit id="8tP3lQI" name="part.info.withdraw_modal.title.withdraw">
@@ -7557,7 +7668,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="DL.TreI" name="category.edit.partname_regex.help">
       <segment state="translated">
         <source>category.edit.partname_regex.help</source>
-        <target>A PCRE-compatible regular expression, which a part name have to match.</target>
+        <target>A PCRE-compatible regular expression, which a part name has to match.</target>
       </segment>
     </unit>
     <unit id="f3gkGc9" name="category.edit.part_ipn_prefix.help">
@@ -7857,7 +7968,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="h9kfyaE" name="log.element_edited.changed_fields.is_full">
       <segment state="translated">
         <source>log.element_edited.changed_fields.is_full</source>
-        <target>Storelocation full</target>
+        <target>Storage location full</target>
       </segment>
     </unit>
     <unit id="K754HtO" name="log.element_edited.changed_fields.limit_to_existing_parts">
@@ -8253,13 +8364,13 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="gt2SlQN" name="import.create_unknown_datastructures">
       <segment state="translated">
         <source>import.create_unknown_datastructures</source>
-        <target>Create unknown datastructures</target>
+        <target>Create unknown data structures</target>
       </segment>
     </unit>
     <unit id=".TjGPnB" name="import.create_unknown_datastructures.help">
       <segment state="translated">
         <source>import.create_unknown_datastructures.help</source>
-        <target>If this is selected, datastructures (like categories, footprints, etc.) which does not exist in the database yet, will be automatically created. If this is not selected, only existing data structures will be used, and if no matching data structure is found, the part will get assigned nothing</target>
+        <target>If this is selected, data structures (like categories, footprints, etc.) which do not exist in the database yet, will be automatically created. If this is not selected, only existing data structures will be used, and if no matching data structure is found, the part will get assigned nothing</target>
       </segment>
     </unit>
     <unit id="y_rsaV8" name="import.path_delimiter">
@@ -8271,7 +8382,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="AOG.hXc" name="import.path_delimiter.help">
       <segment state="translated">
         <source>import.path_delimiter.help</source>
-        <target>The delimiter used to mark different levels in data structure pathes like category, footprint, etc.</target>
+        <target>The delimiter used to mark different levels in data structure paths like category, footprint, etc.</target>
       </segment>
     </unit>
     <unit id="p_IxB9K" name="parts.import.help_documentation">
@@ -8331,7 +8442,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="tNnYa0u" name="project.bom_import.type.kicad_pcbnew">
       <segment state="translated">
         <source>project.bom_import.type.kicad_pcbnew</source>
-        <target>KiCAD Pcbnew BOM (CSV file)</target>
+        <target>KiCad Pcbnew BOM (CSV file)</target>
       </segment>
     </unit>
     <unit id="AtW_ooO" name="project.bom_import.clear_existing_bom">
@@ -8499,7 +8610,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="sg8NMZk" name="log.user_login.ip_anonymize_hint">
       <segment state="translated">
         <source>log.user_login.ip_anonymize_hint</source>
-        <target>If the last digits of the IP address are missing, then the GDPR mode is enabled, in which IP addresses are anynomized.</target>
+        <target>If the last digits of the IP address are missing, then the GDPR mode is enabled, in which IP addresses are anonymized.</target>
       </segment>
     </unit>
     <unit id="K_LOvwj" name="log.user_not_allowed.unauthorized_access_attempt_to">
@@ -8535,7 +8646,7 @@ Element 1 -&gt; Element 1.2</target>
     <unit id="YQafwyc" name="error_table.error">
       <segment state="translated">
         <source>error_table.error</source>
-        <target>An error occured during your request.</target>
+        <target>An error occurred during your request.</target>
       </segment>
     </unit>
     <unit id="SgZGiGG" name="part.table.invalid_regex">
@@ -9209,7 +9320,7 @@ Please note, that you can not impersonate a disabled user. If you try you will g
     <unit id="22Y3GfL" name="part_lot.edit.vendor_barcode.help">
       <segment state="translated">
         <source>part_lot.edit.vendor_barcode.help</source>
-        <target>If this lot already have a barcode (e.g. put there by the vendor), you can input its content here, to easily scan it.</target>
+        <target>If this lot already has a barcode (e.g. put there by the vendor), you can input its content here, to easily scan it.</target>
       </segment>
     </unit>
     <unit id="tFAtJBM" name="scan_dialog.mode.vendor">
@@ -9311,7 +9422,7 @@ Please note, that you can not impersonate a disabled user. If you try you will g
     <unit id="Y8bGSEj" name="permission.legend.dependency_note">
       <segment state="translated">
         <source>permission.legend.dependency_note</source>
-        <target>Please note that some permission operations depend on each other. If you encounter a warning that missing permissions were corrected and a permission was set to allow again, you have to set the dependent operation to forbid too. The dependents can normally found right of an operation.</target>
+        <target>Please note that some permission operations depend on each other. If you encounter a warning that missing permissions were corrected and a permission was set to allow again, you have to set the dependent operation to forbid too. The dependents can normally be found right of an operation.</target>
       </segment>
     </unit>
     <unit id="zWj5h2X" name="log.part_stock_changed.timestamp">
@@ -9999,6 +10110,36 @@ Please note, that you can not impersonate a disabled user. If you try you will g
         <target>Server settings</target>
       </segment>
     </unit>
+    <unit id="ZDiR5ya" name="settings.misc.mcp">
+      <segment state="translated">
+        <source>settings.misc.mcp</source>
+        <target>MCP (Model Context Protocol) Server</target>
+      </segment>
+    </unit>
+    <unit id="CdFWDgN" name="settings.misc.mcp.enabled">
+      <segment state="translated">
+        <source>settings.misc.mcp.enabled</source>
+        <target>Enable MCP endpoint</target>
+      </segment>
+    </unit>
+    <unit id="Gyos.5e" name="settings.misc.mcp.enabled.help">
+      <segment state="translated">
+        <source>settings.misc.mcp.enabled.help</source>
+        <target>Enable the MCP (Model Context Protocol) endpoint at /mcp, which allows AI assistants to interact with Part-DB.</target>
+      </segment>
+    </unit>
+    <unit id="Q7J0OKP" name="settings.misc.mcp.editing_enabled">
+      <segment state="translated">
+        <source>settings.misc.mcp.editing_enabled</source>
+        <target>Enable part-editing MCP tools</target>
+      </segment>
+    </unit>
+    <unit id="wolnNE7" name="settings.misc.mcp.editing_enabled.help">
+      <segment state="translated">
+        <source>settings.misc.mcp.editing_enabled.help</source>
+        <target>Allow AI assistants to create, edit and delete parts and adjust stock levels via MCP tools. When disabled, all MCP tools remain read-only, regardless of the connected token's scope or the user's own permissions.</target>
+      </segment>
+    </unit>
     <unit id="xtw_ol7" name="settings.misc.kicad_eda">
       <segment state="translated">
         <source>settings.misc.kicad_eda</source>
@@ -10014,7 +10155,7 @@ Please note, that you can not impersonate a disabled user. If you try you will g
     <unit id="w07P3Dt" name="settings.misc.kicad_eda.category_depth.help">
       <segment state="translated">
         <source>settings.misc.kicad_eda.category_depth.help</source>
-        <target>This value determines the depth of the category tree, that is visible inside KiCad. 0 means that only the top level categories are visible. Set to a value &gt; 0 to show more levels. Set to -1, to show all parts of Part-DB inside a sigle cnategory in KiCad.</target>
+        <target>This value determines the depth of the category tree, that is visible inside KiCad. 0 means that only the top level categories are visible. Set to a value &gt; 0 to show more levels. Set to -1, to show all parts of Part-DB inside a single category in KiCad.</target>
       </segment>
     </unit>
     <unit id="X5.rQdO" name="settings.misc.kicad_eda.datasheet_link">
@@ -10027,6 +10168,90 @@ Please note, that you can not impersonate a disabled user. If you try you will g
       <segment state="translated">
         <source>settings.misc.kicad_eda.datasheet_link.help</source>
         <target>When enabled, the datasheet field in KiCad will link to the actual PDF file (if found). When disabled, it will link to the Part-DB page instead. The Part-DB page link is always available as a separate "Part-DB URL" field.</target>
+      </segment>
+    </unit>
+    <unit id="h2ChJ6Y" name="settings.misc.kicad_eda.editor.title">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.title</source>
+        <target>KiCad autocomplete lists</target>
+      </segment>
+    </unit>
+    <unit id="C97hNXL" name="settings.misc.kicad_eda.editor.link">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.link</source>
+        <target>Autocomplete settings</target>
+      </segment>
+    </unit>
+    <unit id="pJeX5wZ" name="settings.misc.kicad_eda.editor.description">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.description</source>
+        <target>Configure whether KiCad autocomplete uses the autogenerated default lists or your custom override files. The custom files are editable here, while the default files are shown read-only for reference.</target>
+      </segment>
+    </unit>
+    <unit id="mumlQUV" name="settings.misc.kicad_eda.editor.footprints">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.footprints</source>
+        <target>Footprints list</target>
+      </segment>
+    </unit>
+    <unit id="6VCC6T8" name="settings.misc.kicad_eda.editor.footprints.help">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.footprints.help</source>
+        <target>One entry per line. Used as autocomplete suggestions for KiCad footprint fields.</target>
+      </segment>
+    </unit>
+    <unit id="3EPsJaG" name="settings.misc.kicad_eda.editor.symbols">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.symbols</source>
+        <target>Symbols list</target>
+      </segment>
+    </unit>
+    <unit id="8JyqD1f" name="settings.misc.kicad_eda.editor.symbols.help">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.symbols.help</source>
+        <target>One entry per line. Used as autocomplete suggestions for KiCad symbol fields.</target>
+      </segment>
+    </unit>
+    <unit id="Ops1y13" name="settings.misc.kicad_eda.use_custom_list">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.use_custom_list</source>
+        <target>Use custom autocomplete lists</target>
+      </segment>
+    </unit>
+    <unit id="AjQJzDB" name="settings.misc.kicad_eda.use_custom_list.help">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.use_custom_list.help</source>
+        <target>When enabled, KiCad autocomplete uses public/kicad/footprints_custom.txt and public/kicad/symbols_custom.txt instead of the autogenerated default files.</target>
+      </segment>
+    </unit>
+    <unit id="TfJvNLm" name="settings.misc.kicad_eda.editor.custom_footprints">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.custom_footprints</source>
+        <target>Custom footprints list</target>
+      </segment>
+    </unit>
+    <unit id="6nsnYiB" name="settings.misc.kicad_eda.editor.custom_symbols">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.custom_symbols</source>
+        <target>Custom symbols list</target>
+      </segment>
+    </unit>
+    <unit id="bABze6_" name="settings.misc.kicad_eda.editor.default_footprints">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.default_footprints</source>
+        <target>Default footprints list</target>
+      </segment>
+    </unit>
+    <unit id="3Ycxg5M" name="settings.misc.kicad_eda.editor.default_symbols">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.default_symbols</source>
+        <target>Default symbols list</target>
+      </segment>
+    </unit>
+    <unit id="ADK3.8x" name="settings.misc.kicad_eda.editor.default_files_help">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.editor.default_files_help</source>
+        <target>Autogenerated file shown for reference only. Changes must be made in the custom list.</target>
       </segment>
     </unit>
     <unit id="VwvmcWE" name="settings.behavior.sidebar">
@@ -11103,6 +11328,96 @@ Please note, that you can not impersonate a disabled user. If you try you will g
         <target>Update Part</target>
       </segment>
     </unit>
+    <unit id="_sWGLGs" name="info_providers.bulk_import.back_to_jobs">
+      <segment state="translated">
+        <source>info_providers.bulk_import.back_to_jobs</source>
+        <target>Back to Jobs</target>
+      </segment>
+    </unit>
+    <unit id="2DCRx_T" name="info_providers.bulk_import.back_to_parts">
+      <segment state="translated">
+        <source>info_providers.bulk_import.back_to_parts</source>
+        <target>Back to Parts</target>
+      </segment>
+    </unit>
+    <unit id="9OAohXg" name="info_providers.bulk_import.job_completed">
+      <segment state="translated">
+        <source>info_providers.bulk_import.job_completed</source>
+        <target>Job completed!</target>
+      </segment>
+    </unit>
+    <unit id="hwkbU38" name="info_providers.bulk_import.job_completed.description">
+      <segment state="translated">
+        <source>info_providers.bulk_import.job_completed.description</source>
+        <target>All parts have been processed. You can review the results below or navigate back to the parts list.</target>
+      </segment>
+    </unit>
+    <unit id="ahbWfwA" name="info_providers.bulk_import.recommended">
+      <segment state="translated">
+        <source>info_providers.bulk_import.recommended</source>
+        <target>Top</target>
+      </segment>
+    </unit>
+    <unit id="tFJOMYX" name="info_providers.bulk_import.exact_match">
+      <segment state="translated">
+        <source>info_providers.bulk_import.exact_match</source>
+        <target>Exact name match</target>
+      </segment>
+    </unit>
+    <unit id="mBAxdTx" name="info_providers.bulk_import.mpn_match">
+      <segment state="translated">
+        <source>info_providers.bulk_import.mpn_match</source>
+        <target>MPN matches</target>
+      </segment>
+    </unit>
+    <unit id="W1HbYWX" name="info_providers.bulk_import.active_jobs">
+      <segment state="translated">
+        <source>info_providers.bulk_import.active_jobs</source>
+        <target>Active Jobs</target>
+      </segment>
+    </unit>
+    <unit id="tZSOzU1" name="info_providers.bulk_import.finished_jobs">
+      <segment state="translated">
+        <source>info_providers.bulk_import.finished_jobs</source>
+        <target>History</target>
+      </segment>
+    </unit>
+    <unit id="noEU4s7" name="info_providers.bulk_import.spn_match">
+      <segment state="translated">
+        <source>info_providers.bulk_import.spn_match</source>
+        <target>SPN matches</target>
+      </segment>
+    </unit>
+    <unit id="RiHOuLh" name="info_providers.bulk_import.match">
+      <segment state="translated">
+        <source>info_providers.bulk_import.match</source>
+        <target>Match</target>
+      </segment>
+    </unit>
+    <unit id="UCKGkQ3" name="info_providers.bulk_import.quick_apply">
+      <segment state="translated">
+        <source>info_providers.bulk_import.quick_apply</source>
+        <target>Quick Apply</target>
+      </segment>
+    </unit>
+    <unit id="4uMgGbn" name="info_providers.bulk_import.quick_apply.tooltip">
+      <segment state="translated">
+        <source>info_providers.bulk_import.quick_apply.tooltip</source>
+        <target>Apply this provider result to the part without opening the edit form</target>
+      </segment>
+    </unit>
+    <unit id="a8kwuvb" name="info_providers.bulk_import.quick_apply_all">
+      <segment state="translated">
+        <source>info_providers.bulk_import.quick_apply_all</source>
+        <target>Apply All (Top Results)</target>
+      </segment>
+    </unit>
+    <unit id=".iZc63I" name="info_providers.bulk_import.quick_apply_all.tooltip">
+      <segment state="translated">
+        <source>info_providers.bulk_import.quick_apply_all.tooltip</source>
+        <target>Apply the top-ranked search result to all pending parts without individual review</target>
+      </segment>
+    </unit>
     <unit id="e_DDQ2u" name="info_providers.bulk_import.prefetch_details">
       <segment state="translated">
         <source>info_providers.bulk_import.prefetch_details</source>
@@ -11894,7 +12209,7 @@ Please note that this system is currently experimental, and the synonyms defined
     <unit id="Akh9iFg" name="settings.misc.ipn_suggest.globalPrefix.help">
       <segment state="translated">
         <source>settings.misc.ipn_suggest.globalPrefix.help</source>
-        <target>If enabled, an option for to generate IPN with this global prefix, shared across parts in all categories.</target>
+        <target>If enabled, an option to generate IPN with this global prefix, shared across parts in all categories.</target>
       </segment>
     </unit>
     <unit id="MxKRRx_" name="datatable.datatable.lengthMenu">
@@ -11942,7 +12257,7 @@ Buerklin-API Authentication server:
     <unit id="RFhwYWd" name="info_providers.search.error.transport_exception">
       <segment state="translated">
         <source>info_providers.search.error.transport_exception</source>
-        <target>Transport error while retrieving information from the providers. Check that your server has internet accesss. See server logs for more info.</target>
+        <target>Transport error while retrieving information from the providers. Check that your server has internet access. See server logs for more info.</target>
       </segment>
     </unit>
     <unit id="PExOL_J" name="update_manager.title">
@@ -12632,7 +12947,7 @@ Buerklin-API Authentication server:
     <unit id="Pu8juaH" name="settings.ips.generic_web_provider.enabled.help">
       <segment state="translated">
         <source>settings.ips.generic_web_provider.enabled.help</source>
-        <target>When the provider is enabled, users can make requests to arbitary websites on behalf of the Part-DB server. Only enable this, if you are aware of the potential consequences.</target>
+        <target>When the provider is enabled, users can make requests to arbitrary websites on behalf of the Part-DB server. Only enable this, if you are aware of the potential consequences.</target>
       </segment>
     </unit>
     <unit id="IvIOYcn" name="info_providers.from_url.title">
@@ -12785,6 +13100,690 @@ Buerklin-API Authentication server:
         <target>Last stocktake</target>
       </segment>
     </unit>
+    <unit id="_cV3WJ." name="perm.tools.component_image_generator">
+      <segment state="translated">
+        <source>perm.tools.component_image_generator</source>
+        <target>Component image generator</target>
+      </segment>
+    </unit>
+    <unit id="w4Qd7_v" name="tools.value_calc.title">
+      <segment state="translated">
+        <source>tools.value_calc.title</source>
+        <target>Component image generator</target>
+      </segment>
+    </unit>
+    <unit id="UVNkQz9" name="tools.bulk_gen.title">
+      <segment state="translated">
+        <source>tools.bulk_gen.title</source>
+        <target>Bulk generate component images</target>
+      </segment>
+    </unit>
+    <unit id="2kWHU2t" name="tools.bulk_gen.intro">
+      <segment state="translated">
+        <source>tools.bulk_gen.intro</source>
+        <target>Selected parts that have no picture yet and look like a resistor, SMD resistor or capacitor are listed below. Review the auto-detected type and value, then generate and attach pictures in one go.</target>
+      </segment>
+    </unit>
+    <unit id="o7Hhf0y" name="tools.bulk_gen.pick_location">
+      <segment state="translated">
+        <source>tools.bulk_gen.pick_location</source>
+        <target>— Select a storage location —</target>
+      </segment>
+    </unit>
+    <unit id="4.7quoQ" name="tools.bulk_gen.load">
+      <segment state="translated">
+        <source>tools.bulk_gen.load</source>
+        <target>Load parts</target>
+      </segment>
+    </unit>
+    <unit id="O.MYXkR" name="tools.bulk_gen.none">
+      <segment state="translated">
+        <source>tools.bulk_gen.none</source>
+        <target>None of the %count% selected part(s) could be classified as a resistor, SMD resistor or capacitor without an existing picture.</target>
+      </segment>
+    </unit>
+    <unit id="x7s9G8d" name="tools.bulk_gen.found">
+      <segment state="translated">
+        <source>tools.bulk_gen.found</source>
+        <target>part(s) ready to illustrate.</target>
+      </segment>
+    </unit>
+    <unit id="zZ5O3AO" name="tools.bulk_gen.part">
+      <segment state="translated">
+        <source>tools.bulk_gen.part</source>
+        <target>Part</target>
+      </segment>
+    </unit>
+    <unit id="lIH6iys" name="tools.bulk_gen.type">
+      <segment state="translated">
+        <source>tools.bulk_gen.type</source>
+        <target>Detected type</target>
+      </segment>
+    </unit>
+    <unit id="QIHaCTI" name="tools.bulk_gen.value">
+      <segment state="translated">
+        <source>tools.bulk_gen.value</source>
+        <target>Value</target>
+      </segment>
+    </unit>
+    <unit id="DEZRBBp" name="tools.bulk_gen.wip">
+      <segment state="translated">
+        <source>tools.bulk_gen.wip</source>
+        <target>Review the detected types and values here — generating and attaching the pictures is the next step.</target>
+      </segment>
+    </unit>
+    <unit id="drnXOiF" name="tools.bulk_gen.no_selection">
+      <segment state="translated">
+        <source>tools.bulk_gen.no_selection</source>
+        <target>No parts were selected. Select parts in a list and choose the "Generate component images" action.</target>
+      </segment>
+    </unit>
+    <unit id="1PrfW.0" name="tools.bulk_gen.skipped">
+      <segment state="translated">
+        <source>tools.bulk_gen.skipped</source>
+        <target>skipped: already have a picture or not classifiable</target>
+      </segment>
+    </unit>
+    <unit id="p41pCTH" name="tools.bulk_gen.preview">
+      <segment state="translated">
+        <source>tools.bulk_gen.preview</source>
+        <target>Preview</target>
+      </segment>
+    </unit>
+    <unit id="NRuvA_w" name="tools.bulk_gen.appearance">
+      <segment state="translated">
+        <source>tools.bulk_gen.appearance</source>
+        <target>Picture appearance</target>
+      </segment>
+    </unit>
+    <unit id="P5fnLRL" name="tools.bulk_gen.apply_all">
+      <segment state="translated">
+        <source>tools.bulk_gen.apply_all</source>
+        <target>Apply to all rows</target>
+      </segment>
+    </unit>
+    <unit id="pldOZDv" name="tools.bulk_gen.back">
+      <segment state="translated">
+        <source>tools.bulk_gen.back</source>
+        <target>Back to parts</target>
+      </segment>
+    </unit>
+    <unit id="85.3bGE" name="tools.bulk_gen.with_picture">
+      <segment state="translated">
+        <source>tools.bulk_gen.with_picture</source>
+        <target>%count% selected part(s) already have a picture and were not listed.</target>
+      </segment>
+    </unit>
+    <unit id="8Hv3Fih" name="tools.bulk_gen.regenerate">
+      <segment state="translated">
+        <source>tools.bulk_gen.regenerate</source>
+        <target>Re-generate / overwrite those %count%</target>
+      </segment>
+    </unit>
+    <unit id="O6LlTDp" name="tools.bulk_gen.overwrite_mode">
+      <segment state="translated">
+        <source>tools.bulk_gen.overwrite_mode</source>
+        <target>Overwrite mode: parts that already have a picture are included (marked "has picture"). Generating replaces an earlier generated image and becomes the preview — manually uploaded pictures are kept.</target>
+      </segment>
+    </unit>
+    <unit id="CRmDeDn" name="tools.bulk_gen.has_picture_hint">
+      <segment state="translated">
+        <source>tools.bulk_gen.has_picture_hint</source>
+        <target>This part already has a picture. Generating sets the new image as the preview and replaces any earlier generated image; uploaded photos are kept.</target>
+      </segment>
+    </unit>
+    <unit id="V.Z95Ya" name="tools.bulk_gen.overwrite_exit">
+      <segment state="translated">
+        <source>tools.bulk_gen.overwrite_exit</source>
+        <target>Only parts without a picture</target>
+      </segment>
+    </unit>
+    <unit id="hpMtwLE" name="tools.bulk_gen.has_picture">
+      <segment state="translated">
+        <source>tools.bulk_gen.has_picture</source>
+        <target>has picture</target>
+      </segment>
+    </unit>
+    <unit id="0QW7sAE" name="tools.bulk_gen.help.title">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.title</source>
+        <target>How to get the most auto-filled — what to put in a part's details</target>
+      </segment>
+    </unit>
+    <unit id="TnVBe2o" name="tools.bulk_gen.help.intro">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.intro</source>
+        <target>Each field is read from the part's parameters first, then from its name and description. Add any of the below to improve detection. A part is only listed here if it has no picture yet and its value can be read.</target>
+      </segment>
+    </unit>
+    <unit id="QQZe5y0" name="tools.bulk_gen.help.col_field">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.col_field</source>
+        <target>Field</target>
+      </segment>
+    </unit>
+    <unit id="1QowDug" name="tools.bulk_gen.help.col_param">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.col_param</source>
+        <target>Add a parameter named…</target>
+      </segment>
+    </unit>
+    <unit id="CqB4_7l" name="tools.bulk_gen.help.col_text">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.col_text</source>
+        <target>…or write in the name / description</target>
+      </segment>
+    </unit>
+    <unit id="TzOhtVs" name="tools.bulk_gen.help.value">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.value</source>
+        <target>Value (required to classify)</target>
+      </segment>
+    </unit>
+    <unit id="q1oFve4" name="tools.bulk_gen.help.voltage">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.voltage</source>
+        <target>Rated voltage (capacitors)</target>
+      </segment>
+    </unit>
+    <unit id="m.ukxwY" name="tools.bulk_gen.help.tolerance">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.tolerance</source>
+        <target>Tolerance</target>
+      </segment>
+    </unit>
+    <unit id="9JuLf7_" name="tools.bulk_gen.help.pitch">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.pitch</source>
+        <target>Lead pitch (capacitors)</target>
+      </segment>
+    </unit>
+    <unit id="Mm5XjTE" name="tools.bulk_gen.help.diameter">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.diameter</source>
+        <target>Body diameter (capacitors)</target>
+      </segment>
+    </unit>
+    <unit id="_go1VH3" name="tools.bulk_gen.help.smd">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.smd</source>
+        <target>SMD size (resistors → footprint)</target>
+      </segment>
+    </unit>
+    <unit id="F_rt.V0" name="tools.bulk_gen.help.footprint_col">
+      <segment state="translated">
+        <source>tools.bulk_gen.help.footprint_col</source>
+        <target>the assigned footprint</target>
+      </segment>
+    </unit>
+    <unit id="BzfGAkJ" name="tools.bulk_gen.kicad">
+      <segment state="translated">
+        <source>tools.bulk_gen.kicad</source>
+        <target>KiCad</target>
+      </segment>
+    </unit>
+    <unit id="6p_Fewa" name="tools.bulk_gen.write_eda">
+      <segment state="translated">
+        <source>tools.bulk_gen.write_eda</source>
+        <target>Write KiCad settings to checked parts</target>
+      </segment>
+    </unit>
+    <unit id="2fjEIWv" name="tools.bulk_gen.eda_written">
+      <segment state="translated">
+        <source>tools.bulk_gen.eda_written</source>
+        <target>EDA settings written</target>
+      </segment>
+    </unit>
+    <unit id="ls7Uqra" name="tools.bulk_gen.footprint_ph">
+      <segment state="translated">
+        <source>tools.bulk_gen.footprint_ph</source>
+        <target>Footprint (optional)</target>
+      </segment>
+    </unit>
+    <unit id="oAIk8i7" name="tools.bulk_gen.reference">
+      <segment state="translated">
+        <source>tools.bulk_gen.reference</source>
+        <target>Reference prefix</target>
+      </segment>
+    </unit>
+    <unit id="muj74qD" name="tools.bulk_gen.kicad_hint">
+      <segment state="translated">
+        <source>tools.bulk_gen.kicad_hint</source>
+        <target>Suggested values — edit any field before writing.</target>
+      </segment>
+    </unit>
+    <unit id="Br89uCs" name="tools.bulk_gen.generate_attach">
+      <segment state="translated">
+        <source>tools.bulk_gen.generate_attach</source>
+        <target>Attach pictures to the checked parts</target>
+      </segment>
+    </unit>
+    <unit id="kSqlKsg" name="tools.bulk_gen.attached">
+      <segment state="translated">
+        <source>tools.bulk_gen.attached</source>
+        <target>attached</target>
+      </segment>
+    </unit>
+    <unit id="xelX1D." name="tools.bulk_gen.failed">
+      <segment state="translated">
+        <source>tools.bulk_gen.failed</source>
+        <target>failed</target>
+      </segment>
+    </unit>
+    <unit id="khBAB32" name="part_list.action.group.images">
+      <segment state="translated">
+        <source>part_list.action.group.images</source>
+        <target>Images</target>
+      </segment>
+    </unit>
+    <unit id="DWEWX5m" name="part_list.action.generate_images">
+      <segment state="translated">
+        <source>part_list.action.generate_images</source>
+        <target>Generate component images</target>
+      </segment>
+    </unit>
+    <unit id="9rk9901" name="tools.value_calc.explanation">
+      <segment state="translated">
+        <source>tools.value_calc.explanation</source>
+        <target>Decode and visualize the value of common components — colour bands (resistors, inductors), capacitor codes and SMD chip markings. Read a part by picking its bands/code, or enter a value to generate the matching bands/code and a picture you can attach to the part.</target>
+      </segment>
+    </unit>
+    <unit id="Wutg3Q." name="tools.value_calc.body_color">
+      <segment state="translated">
+        <source>tools.value_calc.body_color</source>
+        <target>Body color</target>
+      </segment>
+    </unit>
+    <unit id="NjxMj8i" name="tools.value_calc.appearance">
+      <segment state="translated">
+        <source>tools.value_calc.appearance</source>
+        <target>Picture appearance (for the generated image)</target>
+      </segment>
+    </unit>
+    <unit id="6QjyC_T" name="tools.value_calc.body.beige">
+      <segment state="translated">
+        <source>tools.value_calc.body.beige</source>
+        <target>Beige</target>
+      </segment>
+    </unit>
+    <unit id="6s2.Buz" name="tools.value_calc.body.blue">
+      <segment state="translated">
+        <source>tools.value_calc.body.blue</source>
+        <target>Blue</target>
+      </segment>
+    </unit>
+    <unit id="cyKVndH" name="tools.value_calc.body.green">
+      <segment state="translated">
+        <source>tools.value_calc.body.green</source>
+        <target>Green</target>
+      </segment>
+    </unit>
+    <unit id="LYm1abo" name="tools.value_calc.body.lightblue">
+      <segment state="translated">
+        <source>tools.value_calc.body.lightblue</source>
+        <target>Light blue</target>
+      </segment>
+    </unit>
+    <unit id="OdU12Px" name="tools.value_calc.body.tan">
+      <segment state="translated">
+        <source>tools.value_calc.body.tan</source>
+        <target>Tan</target>
+      </segment>
+    </unit>
+    <unit id="QWAQSny" name="tools.value_calc.body.red">
+      <segment state="translated">
+        <source>tools.value_calc.body.red</source>
+        <target>Red</target>
+      </segment>
+    </unit>
+    <unit id="lKLExIa" name="tools.value_calc.body.purple">
+      <segment state="translated">
+        <source>tools.value_calc.body.purple</source>
+        <target>Purple</target>
+      </segment>
+    </unit>
+    <unit id="MCCipeP" name="tools.value_calc.body.black">
+      <segment state="translated">
+        <source>tools.value_calc.body.black</source>
+        <target>Black</target>
+      </segment>
+    </unit>
+    <unit id="_kEot4_" name="tools.value_calc.body.grey">
+      <segment state="translated">
+        <source>tools.value_calc.body.grey</source>
+        <target>Grey</target>
+      </segment>
+    </unit>
+    <unit id="SmT12PC" name="tools.value_calc.body.white">
+      <segment state="translated">
+        <source>tools.value_calc.body.white</source>
+        <target>White</target>
+      </segment>
+    </unit>
+    <unit id="LwrLuvE" name="tools.value_calc.resistor.title">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.title</source>
+        <target>Resistor</target>
+      </segment>
+    </unit>
+    <unit id="MRvw3fS" name="tools.value_calc.inductor.title">
+      <segment state="translated">
+        <source>tools.value_calc.inductor.title</source>
+        <target>Inductor</target>
+      </segment>
+    </unit>
+    <unit id="7tiQ2kD" name="tools.value_calc.inductor.result">
+      <segment state="translated">
+        <source>tools.value_calc.inductor.result</source>
+        <target>Inductance</target>
+      </segment>
+    </unit>
+    <unit id="rdDekSe" name="tools.value_calc.inductor.intro">
+      <segment state="translated">
+        <source>tools.value_calc.inductor.intro</source>
+        <target>Molded axial inductors use the same colour-band code as resistors, but the value is read in microhenries (µH). Pick the band colours, or type a value to set them.</target>
+      </segment>
+    </unit>
+    <unit id="01aeaTL" name="tools.value_calc.inductor.from_value">
+      <segment state="translated">
+        <source>tools.value_calc.inductor.from_value</source>
+        <target>Set from value</target>
+      </segment>
+    </unit>
+    <unit id="plveEuM" name="tools.value_calc.inductor.from_value_help">
+      <segment state="translated">
+        <source>tools.value_calc.inductor.from_value_help</source>
+        <target>Enter an inductance to colour the bands automatically. A bare number is read as µH (e.g. 100 = 100µH); you can also write 100µH, 10mH or 470nH.</target>
+      </segment>
+    </unit>
+    <unit id="I.9reWF" name="tools.value_calc.diode.title">
+      <segment state="translated">
+        <source>tools.value_calc.diode.title</source>
+        <target>Diode</target>
+      </segment>
+    </unit>
+    <unit id="zcMjEwC" name="tools.value_calc.smd_inductor.title">
+      <segment state="translated">
+        <source>tools.value_calc.smd_inductor.title</source>
+        <target>SMD inductor</target>
+      </segment>
+    </unit>
+    <unit id="pnSYOlL" name="tools.value_calc.smd_inductor.intro">
+      <segment state="translated">
+        <source>tools.value_calc.smd_inductor.intro</source>
+        <target>Molded/shielded SMD power inductor — enter the inductance (e.g. 100µH, 10mH) to see its printed µH code.</target>
+      </segment>
+    </unit>
+    <unit id="T0eIUAR" name="tools.value_calc.smd_capacitor.title">
+      <segment state="translated">
+        <source>tools.value_calc.smd_capacitor.title</source>
+        <target>SMD capacitor</target>
+      </segment>
+    </unit>
+    <unit id="klrs9fw" name="tools.value_calc.smd_capacitor.intro">
+      <segment state="translated">
+        <source>tools.value_calc.smd_capacitor.intro</source>
+        <target>Surface-mount MLCC capacitors are almost always unmarked, so there's nothing to decode — just enter the value and package to generate a picture you can attach to the part.</target>
+      </segment>
+    </unit>
+    <unit id="sQ75HQp" name="tools.value_calc.body.brown">
+      <segment state="translated">
+        <source>tools.value_calc.body.brown</source>
+        <target>Brown</target>
+      </segment>
+    </unit>
+    <unit id="BIzIMMQ" name="tools.value_calc.capacitor.title">
+      <segment state="translated">
+        <source>tools.value_calc.capacitor.title</source>
+        <target>Capacitor</target>
+      </segment>
+    </unit>
+    <unit id="b03881." name="tools.value_calc.smd.title">
+      <segment state="translated">
+        <source>tools.value_calc.smd.title</source>
+        <target>SMD resistor</target>
+      </segment>
+    </unit>
+    <unit id="_sL6o2y" name="tools.value_calc.resistor.bands">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.bands</source>
+        <target>Number of bands</target>
+      </segment>
+    </unit>
+    <unit id="xs6fVOi" name="tools.value_calc.resistor.bands_4">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.bands_4</source>
+        <target>4 bands</target>
+      </segment>
+    </unit>
+    <unit id="30PFCzm" name="tools.value_calc.resistor.bands_5">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.bands_5</source>
+        <target>5 bands</target>
+      </segment>
+    </unit>
+    <unit id="DX1HXAI" name="tools.value_calc.resistor.bands_6">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.bands_6</source>
+        <target>6 bands</target>
+      </segment>
+    </unit>
+    <unit id="purYVqq" name="tools.value_calc.attach.context">
+      <segment state="translated">
+        <source>tools.value_calc.attach.context</source>
+        <target>The generated image can be attached to part "%part%". Pick a component below and click "Attach to part".</target>
+      </segment>
+    </unit>
+    <unit id="MJwP_g9" name="tools.value_calc.attach.as_preview">
+      <segment state="translated">
+        <source>tools.value_calc.attach.as_preview</source>
+        <target>Use as preview image</target>
+      </segment>
+    </unit>
+    <unit id="oWqgBTd" name="tools.value_calc.attach.button">
+      <segment state="translated">
+        <source>tools.value_calc.attach.button</source>
+        <target>Attach to part</target>
+      </segment>
+    </unit>
+    <unit id="xdeSZDX" name="tools.value_calc.download.button">
+      <segment state="translated">
+        <source>tools.value_calc.download.button</source>
+        <target>Download SVG</target>
+      </segment>
+    </unit>
+    <unit id="28wuv9g" name="tools.value_calc.attach.generate_button">
+      <segment state="translated">
+        <source>tools.value_calc.attach.generate_button</source>
+        <target>Generate component image</target>
+      </segment>
+    </unit>
+    <unit id="L3lHryR" name="tools.value_calc.attach.generate_hint">
+      <segment state="translated">
+        <source>tools.value_calc.attach.generate_hint</source>
+        <target>Generate a resistor, capacitor or SMD picture and attach it to this part.</target>
+      </segment>
+    </unit>
+    <unit id="X7XTymp" name="part.generate_image.flash.success">
+      <segment state="translated">
+        <source>part.generate_image.flash.success</source>
+        <target>Generated image was attached to the part.</target>
+      </segment>
+    </unit>
+    <unit id="M1lbZ9t" name="part.generate_image.flash.invalid">
+      <segment state="translated">
+        <source>part.generate_image.flash.invalid</source>
+        <target>No valid image was generated. Please try again.</target>
+      </segment>
+    </unit>
+    <unit id="QffBG3D" name="tools.value_calc.size">
+      <segment state="translated">
+        <source>tools.value_calc.size</source>
+        <target>Size</target>
+      </segment>
+    </unit>
+    <unit id="L13hRpG" name="tools.value_calc.resistor.power">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.power</source>
+        <target>Power rating</target>
+      </segment>
+    </unit>
+    <unit id="MqEycmJ" name="tools.value_calc.smd.package">
+      <segment state="translated">
+        <source>tools.value_calc.smd.package</source>
+        <target>Package size</target>
+      </segment>
+    </unit>
+    <unit id="olHJ0vl" name="tools.value_calc.cap.diameter">
+      <segment state="translated">
+        <source>tools.value_calc.cap.diameter</source>
+        <target>Diameter</target>
+      </segment>
+    </unit>
+    <unit id="E1cOfqy" name="tools.value_calc.cap.pitch">
+      <segment state="translated">
+        <source>tools.value_calc.cap.pitch</source>
+        <target>Pitch</target>
+      </segment>
+    </unit>
+    <unit id="FKWp7U5" name="tools.value_calc.cap.voltage">
+      <segment state="translated">
+        <source>tools.value_calc.cap.voltage</source>
+        <target>Voltage</target>
+      </segment>
+    </unit>
+    <unit id="raUtT.R" name="tools.value_calc.cap.shape">
+      <segment state="translated">
+        <source>tools.value_calc.cap.shape</source>
+        <target>Shape</target>
+      </segment>
+    </unit>
+    <unit id="oN0_C8R" name="tools.value_calc.cap.shape.disc">
+      <segment state="translated">
+        <source>tools.value_calc.cap.shape.disc</source>
+        <target>Disc</target>
+      </segment>
+    </unit>
+    <unit id="MHhPBPX" name="tools.value_calc.cap.shape.blob">
+      <segment state="translated">
+        <source>tools.value_calc.cap.shape.blob</source>
+        <target>Blob (MLCC)</target>
+      </segment>
+    </unit>
+    <unit id="06VXi9x" name="tools.value_calc.cap.lead">
+      <segment state="translated">
+        <source>tools.value_calc.cap.lead</source>
+        <target>Leads</target>
+      </segment>
+    </unit>
+    <unit id="L.llZTh" name="tools.value_calc.cap.lead.short">
+      <segment state="translated">
+        <source>tools.value_calc.cap.lead.short</source>
+        <target>Short</target>
+      </segment>
+    </unit>
+    <unit id="_3P0Qam" name="tools.value_calc.cap.lead.medium">
+      <segment state="translated">
+        <source>tools.value_calc.cap.lead.medium</source>
+        <target>Medium</target>
+      </segment>
+    </unit>
+    <unit id="ZQTcKZx" name="tools.value_calc.cap.lead.long">
+      <segment state="translated">
+        <source>tools.value_calc.cap.lead.long</source>
+        <target>Long</target>
+      </segment>
+    </unit>
+    <unit id="FqXdnRc" name="tools.value_calc.resistor.result">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.result</source>
+        <target>Resistance</target>
+      </segment>
+    </unit>
+    <unit id="OTTkN3o" name="tools.value_calc.resistor.from_value_help">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.from_value_help</source>
+        <target>Enter a resistance value to generate the color bands. You can use suffixes like k, M and the RKM notation (e.g. 4k7).</target>
+      </segment>
+    </unit>
+    <unit id="Xi31jNl" name="tools.value_calc.resistor.from_value">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.from_value</source>
+        <target>Value to color code</target>
+      </segment>
+    </unit>
+    <unit id="KHum5f2" name="tools.value_calc.resistor.apply_value">
+      <segment state="translated">
+        <source>tools.value_calc.resistor.apply_value</source>
+        <target>Generate bands</target>
+      </segment>
+    </unit>
+    <unit id="WZBCUvc" name="tools.value_calc.capacitor.intro">
+      <segment state="translated">
+        <source>tools.value_calc.capacitor.intro</source>
+        <target>Works for the printed number codes on ceramic (MLCC), film and similar capacitors. Small caps below 100 pF are usually printed directly (e.g. 47 or 4R7), larger ones use the 3-digit code (e.g. 104 = 100 nF).</target>
+      </segment>
+    </unit>
+    <unit id="qO0YTDd" name="tools.value_calc.smd.on_chip_help">
+      <segment state="translated">
+        <source>tools.value_calc.smd.on_chip_help</source>
+        <target>Edit any field to update the others. Use the radio to pick which code is printed on the chip.</target>
+      </segment>
+    </unit>
+    <unit id="CDm8Xm1" name="tools.value_calc.field.value">
+      <segment state="translated">
+        <source>tools.value_calc.field.value</source>
+        <target>Value</target>
+      </segment>
+    </unit>
+    <unit id="DuH5wvO" name="tools.value_calc.field.code">
+      <segment state="translated">
+        <source>tools.value_calc.field.code</source>
+        <target>Code</target>
+      </segment>
+    </unit>
+    <unit id="SUNNhdN" name="tools.value_calc.field.tolerance">
+      <segment state="translated">
+        <source>tools.value_calc.field.tolerance</source>
+        <target>Tolerance</target>
+      </segment>
+    </unit>
+    <unit id="WlwMSHx" name="tools.value_calc.field.power">
+      <segment state="translated">
+        <source>tools.value_calc.field.power</source>
+        <target>Power</target>
+      </segment>
+    </unit>
+    <unit id="Ymg5mvK" name="tools.value_calc.field.ppm">
+      <segment state="translated">
+        <source>tools.value_calc.field.ppm</source>
+        <target>Temp. coeff. (ppm/K)</target>
+      </segment>
+    </unit>
+    <unit id="evfc3t0" name="tools.value_calc.field.code3">
+      <segment state="translated">
+        <source>tools.value_calc.field.code3</source>
+        <target>3-digit</target>
+      </segment>
+    </unit>
+    <unit id="LQJWL5p" name="tools.value_calc.field.code4">
+      <segment state="translated">
+        <source>tools.value_calc.field.code4</source>
+        <target>4-digit</target>
+      </segment>
+    </unit>
+    <unit id="69hYjGC" name="tools.value_calc.field.eia96">
+      <segment state="translated">
+        <source>tools.value_calc.field.eia96</source>
+        <target>EIA-96</target>
+      </segment>
+    </unit>
+    <unit id="iCZnz4i" name="tools.value_calc.field.on_chip">
+      <segment state="translated">
+        <source>tools.value_calc.field.on_chip</source>
+        <target>Printed on the chip</target>
+      </segment>
+    </unit>
     <unit id="GNWhoTW" name="part.table.eda_reference">
       <segment state="translated">
         <source>part.table.eda_reference</source>
@@ -12806,7 +13805,19 @@ Buerklin-API Authentication server:
     <unit id="Z78QunV" name="settings.misc.kicad_eda.default_parameter_visibility.help">
       <segment state="translated">
         <source>settings.misc.kicad_eda.default_parameter_visibility.help</source>
-        <target>EDA visibility for all [part] parameters who does not have an explicit visibility set. When enabled all parameters will be visible in the EDA software by default.</target>
+        <target>EDA visibility for all [part] parameters that do not have an explicit visibility set. When enabled all parameters will be visible in the EDA software by default.</target>
+      </segment>
+    </unit>
+    <unit id="XchzDpI" name="settings.misc.kicad_eda.default_parameter_symbol_visibility">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.default_parameter_symbol_visibility</source>
+        <target>Default symbol visibility of parameters</target>
+      </segment>
+    </unit>
+    <unit id="zLHkPCx" name="settings.misc.kicad_eda.default_parameter_symbol_visibility.help">
+      <segment state="translated">
+        <source>settings.misc.kicad_eda.default_parameter_symbol_visibility.help</source>
+        <target>Whether exported [part] parameter fields that do not have an explicit symbol visibility set are shown in the schematic symbol (the KiCad field's "visible" flag). Only affects parameters that are already exported as EDA fields.</target>
       </segment>
     </unit>
     <unit id="J6pYnaC" name="settings.misc.kicad_eda.default_orderdetails_visibility">
@@ -12818,7 +13829,7 @@ Buerklin-API Authentication server:
     <unit id="Hiye4C." name="settings.misc.kicad_eda.default_orderdetails_visibility.help">
       <segment state="translated">
         <source>settings.misc.kicad_eda.default_orderdetails_visibility.help</source>
-        <target>EDA visibility for all purchase infos who does not have an explicit visibility set. When enabled all purchase infos will be visible in the EDA software by default.</target>
+        <target>EDA visibility for all purchase infos that do not have an explicit visibility set. When enabled all purchase infos will be visible in the EDA software by default.</target>
       </segment>
     </unit>
     <unit id="aEgd0if" name="label_scanner.open">
@@ -12863,6 +13874,12 @@ Buerklin-API Authentication server:
         <target>Amazon barcode</target>
       </segment>
     </unit>
+    <unit id="d.V2Pid" name="scan_dialog.mode.tme">
+      <segment state="translated">
+        <source>scan_dialog.mode.tme</source>
+        <target>TME barcode</target>
+      </segment>
+    </unit>
     <unit id="BQWuR_G" name="settings.ips.canopy">
       <segment state="translated">
         <source>settings.ips.canopy</source>
@@ -12879,6 +13896,72 @@ Buerklin-API Authentication server:
       <segment state="translated">
         <source>settings.ips.canopy.alwaysGetDetails.help</source>
         <target>When selected, more details will be fetched from canopy when creating a part. This causes an additional API request, but gives product bullet points and category info.</target>
+      </segment>
+    </unit>
+    <unit id="KyC_YsX" name="settings.ips.trustedparts">
+      <segment state="translated">
+        <source>settings.ips.trustedparts</source>
+        <target>TrustedParts</target>
+      </segment>
+    </unit>
+    <unit id="iB2.9sg" name="settings.ips.trustedparts.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.help</source>
+        <target>TrustedParts.com is a part search engine operated by the ECIA, which aggregates the offers of authorized distributors. You have to request access to their API to use this provider.</target>
+      </segment>
+    </unit>
+    <unit id="Mhe.lWu" name="settings.ips.trustedparts.companyId">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.companyId</source>
+        <target>Company ID</target>
+      </segment>
+    </unit>
+    <unit id="DvzhYe1" name="settings.ips.trustedparts.companyId.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.companyId.help</source>
+        <target>The company identifier which was assigned to your TrustedParts.com account. You can find it on the API key page of your account.</target>
+      </segment>
+    </unit>
+    <unit id="AqF7ns9" name="settings.ips.trustedparts.apiKey.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.apiKey.help</source>
+        <target>The API key which was assigned to your TrustedParts.com account. You can find it on the API key page of your account.</target>
+      </segment>
+    </unit>
+    <unit id="Gh676P6" name="settings.ips.trustedparts.searchLimit">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.searchLimit</source>
+        <target>Search limit</target>
+      </segment>
+    </unit>
+    <unit id="R7oiMLD" name="settings.ips.trustedparts.searchLimit.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.searchLimit.help</source>
+        <target>The maximum number of results which are shown for a keyword search.</target>
+      </segment>
+    </unit>
+    <unit id="DFkCu4n" name="settings.ips.trustedparts.inStockOnly">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.inStockOnly</source>
+        <target>Only offers in stock</target>
+      </segment>
+    </unit>
+    <unit id="EF2mFRR" name="settings.ips.trustedparts.inStockOnly.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.inStockOnly.help</source>
+        <target>If enabled, only the offers of distributors which currently have the part in stock are returned.</target>
+      </segment>
+    </unit>
+    <unit id="r4gkOcR" name="settings.ips.trustedparts.useCachedData">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.useCachedData</source>
+        <target>Use cached data</target>
+      </segment>
+    </unit>
+    <unit id="JNIu4bu" name="settings.ips.trustedparts.useCachedData.help">
+      <segment state="translated">
+        <source>settings.ips.trustedparts.useCachedData.help</source>
+        <target>If enabled, TrustedParts.com answers with cached stock and price data instead of querying the distributors in real time. This is faster and does not count against the rate limits, but the data can be outdated.</target>
       </segment>
     </unit>
     <unit id="D055xh8" name="attachment.sandbox.warning">
@@ -12941,6 +14024,312 @@ Buerklin-API Authentication server:
         <target>Backup download allowed</target>
       </segment>
     </unit>
+    <unit id="Ld698rE" name="update_manager.docker.setup_title">
+      <segment state="translated">
+        <source>update_manager.docker.setup_title</source>
+        <target>Enable One-Click Docker Updates with Watchtower</target>
+      </segment>
+    </unit>
+    <unit id="A_UDLkn" name="update_manager.docker.setup_description">
+      <segment state="translated">
+        <source>update_manager.docker.setup_description</source>
+        <target>Part-DB can update your Docker container automatically using Watchtower, an open-source container updater. Add Watchtower as a companion container and configure the connection below.</target>
+      </segment>
+    </unit>
+    <unit id="p092aHv" name="update_manager.docker.setup_step1">
+      <segment state="translated">
+        <source>update_manager.docker.setup_step1</source>
+        <target>1. Add Watchtower to your docker-compose.yml:</target>
+      </segment>
+    </unit>
+    <unit id="VVejRLi" name="update_manager.docker.setup_step2">
+      <segment state="translated">
+        <source>update_manager.docker.setup_step2</source>
+        <target>2. Add these environment variables to your Part-DB container:</target>
+      </segment>
+    </unit>
+    <unit id="3tlczB." name="update_manager.docker.setup_network_hint">
+      <segment state="translated">
+        <source>update_manager.docker.setup_network_hint</source>
+        <target>Make sure Part-DB and Watchtower are on the same Docker network. If you use label-based filtering in Watchtower (WATCHTOWER_LABEL_ENABLE=true), add the label "com.centurylinklabs.watchtower.enable=true" to your Part-DB container.</target>
+      </segment>
+    </unit>
+    <unit id="5ZI3hh9" name="update_manager.docker.watchtower_unreachable_title">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_unreachable_title</source>
+        <target>Watchtower Not Reachable</target>
+      </segment>
+    </unit>
+    <unit id=".0wFRZ." name="update_manager.docker.watchtower_unreachable_description">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_unreachable_description</source>
+        <target>Watchtower is configured but cannot be reached. Please verify that the Watchtower container is running and that the API URL and token are correct.</target>
+      </segment>
+    </unit>
+    <unit id="PXadA3E" name="update_manager.docker.confirm_update">
+      <segment state="translated">
+        <source>update_manager.docker.confirm_update</source>
+        <target>Are you sure you want to update Part-DB via Watchtower? The container will be restarted with the new image. Unlike Git updates, Docker updates cannot be automatically rolled back.</target>
+      </segment>
+    </unit>
+    <unit id="zVnBU_y" name="update_manager.docker.update_via_watchtower">
+      <segment state="translated">
+        <source>update_manager.docker.update_via_watchtower</source>
+        <target>Update via Watchtower to</target>
+      </segment>
+    </unit>
+    <unit id="rygIXG_" name="update_manager.docker.no_rollback_warning">
+      <segment state="translated">
+        <source>update_manager.docker.no_rollback_warning</source>
+        <target>Docker updates cannot be automatically rolled back. A database backup will be created before updating so you can restore your data if needed.</target>
+      </segment>
+    </unit>
+    <unit id="6YSYc7u" name="update_manager.docker.progress_title">
+      <segment state="translated">
+        <source>update_manager.docker.progress_title</source>
+        <target>Docker Update in Progress</target>
+      </segment>
+    </unit>
+    <unit id="4zjA6Z2" name="update_manager.docker.waiting_for_watchtower">
+      <segment state="translated">
+        <source>update_manager.docker.waiting_for_watchtower</source>
+        <target>Waiting for Watchtower to pull the new image...</target>
+      </segment>
+    </unit>
+    <unit id="N4ayoEp" name="update_manager.docker.elapsed">
+      <segment state="translated">
+        <source>update_manager.docker.elapsed</source>
+        <target>Elapsed</target>
+      </segment>
+    </unit>
+    <unit id="B2piu_D" name="update_manager.docker.waiting_title">
+      <segment state="translated">
+        <source>update_manager.docker.waiting_title</source>
+        <target>Update Triggered</target>
+      </segment>
+    </unit>
+    <unit id="K7uq04F" name="update_manager.docker.waiting_description">
+      <segment state="translated">
+        <source>update_manager.docker.waiting_description</source>
+        <target>Watchtower has been notified. It will pull the latest Docker image and restart the Part-DB container.</target>
+      </segment>
+    </unit>
+    <unit id="nYC4Dw9" name="update_manager.docker.watchtower_working">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_working</source>
+        <target>Watchtower is processing the update...</target>
+      </segment>
+    </unit>
+    <unit id="IPd5mwk" name="update_manager.docker.watchtower_working_hint">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_working_hint</source>
+        <target>This may take a few minutes depending on your internet speed and image size.</target>
+      </segment>
+    </unit>
+    <unit id="Q_XPcbn" name="update_manager.docker.restarting_title">
+      <segment state="translated">
+        <source>update_manager.docker.restarting_title</source>
+        <target>Container Restarting</target>
+      </segment>
+    </unit>
+    <unit id="fxJe7Uc" name="update_manager.docker.restarting_description">
+      <segment state="translated">
+        <source>update_manager.docker.restarting_description</source>
+        <target>Watchtower has pulled the new image and is restarting the Part-DB container.</target>
+      </segment>
+    </unit>
+    <unit id="fgtq0OK" name="update_manager.docker.restarting_hint">
+      <segment state="translated">
+        <source>update_manager.docker.restarting_hint</source>
+        <target>The page will automatically detect when the server comes back online. This usually takes 10-30 seconds.</target>
+      </segment>
+    </unit>
+    <unit id="ZskYT6q" name="update_manager.docker.success_title">
+      <segment state="translated">
+        <source>update_manager.docker.success_title</source>
+        <target>Update Complete!</target>
+      </segment>
+    </unit>
+    <unit id="lIi.I9w" name="update_manager.docker.success_message">
+      <segment state="translated">
+        <source>update_manager.docker.success_message</source>
+        <target>Part-DB has been successfully updated via Watchtower.</target>
+      </segment>
+    </unit>
+    <unit id="RqtjuI7" name="update_manager.docker.previous_version">
+      <segment state="translated">
+        <source>update_manager.docker.previous_version</source>
+        <target>Previous version</target>
+      </segment>
+    </unit>
+    <unit id="KLNv9FX" name="update_manager.docker.new_version">
+      <segment state="translated">
+        <source>update_manager.docker.new_version</source>
+        <target>New version</target>
+      </segment>
+    </unit>
+    <unit id="EyK.Bvs" name="update_manager.docker.back_to_update_manager">
+      <segment state="translated">
+        <source>update_manager.docker.back_to_update_manager</source>
+        <target>Back to Update Manager</target>
+      </segment>
+    </unit>
+    <unit id="qXEyzbC" name="update_manager.docker.go_to_homepage">
+      <segment state="translated">
+        <source>update_manager.docker.go_to_homepage</source>
+        <target>Go to Homepage</target>
+      </segment>
+    </unit>
+    <unit id="zLbfHFP" name="update_manager.docker.timeout_title">
+      <segment state="translated">
+        <source>update_manager.docker.timeout_title</source>
+        <target>Update Taking Longer Than Expected</target>
+      </segment>
+    </unit>
+    <unit id="fbpbM4e" name="update_manager.docker.timeout_message">
+      <segment state="translated">
+        <source>update_manager.docker.timeout_message</source>
+        <target>The update is taking longer than expected. Check the Watchtower container logs for details. The update may still be in progress.</target>
+      </segment>
+    </unit>
+    <unit id="eTDf1ym" name="update_manager.docker.retry">
+      <segment state="translated">
+        <source>update_manager.docker.retry</source>
+        <target>Retry</target>
+      </segment>
+    </unit>
+    <unit id="BTQH5SL" name="update_manager.docker.warning">
+      <segment state="translated">
+        <source>update_manager.docker.warning</source>
+        <target>Warning</target>
+      </segment>
+    </unit>
+    <unit id="5A6K7gA" name="update_manager.docker.do_not_close">
+      <segment state="translated">
+        <source>update_manager.docker.do_not_close</source>
+        <target>Do not close this page. It will automatically detect when the update is complete.</target>
+      </segment>
+    </unit>
+    <unit id="JOGLw48" name="update_manager.docker.updating_via_watchtower">
+      <segment state="translated">
+        <source>update_manager.docker.updating_via_watchtower</source>
+        <target>Updating via Watchtower</target>
+      </segment>
+    </unit>
+    <unit id="L1aNTz2" name="update_manager.docker.step_waiting">
+      <segment state="translated">
+        <source>update_manager.docker.step_waiting</source>
+        <target>Pulling Image</target>
+      </segment>
+    </unit>
+    <unit id="K8G9Omp" name="update_manager.docker.steps">
+      <segment state="translated">
+        <source>update_manager.docker.steps</source>
+        <target>Update Steps</target>
+      </segment>
+    </unit>
+    <unit id="rwPMohr" name="update_manager.docker.step_trigger">
+      <segment state="translated">
+        <source>update_manager.docker.step_trigger</source>
+        <target>Trigger Update</target>
+      </segment>
+    </unit>
+    <unit id="C6T6dki" name="update_manager.docker.step_trigger_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_trigger_desc</source>
+        <target>Watchtower has been notified to check for updates</target>
+      </segment>
+    </unit>
+    <unit id="sHx0nZN" name="update_manager.docker.step_pull">
+      <segment state="translated">
+        <source>update_manager.docker.step_pull</source>
+        <target>Pull New Image</target>
+      </segment>
+    </unit>
+    <unit id="VC7sifr" name="update_manager.docker.step_pull_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_pull_desc</source>
+        <target>Downloading the latest Docker image from the registry</target>
+      </segment>
+    </unit>
+    <unit id="H5.XUFa" name="update_manager.docker.step_restart">
+      <segment state="translated">
+        <source>update_manager.docker.step_restart</source>
+        <target>Restart Container</target>
+      </segment>
+    </unit>
+    <unit id="KRNQZKS" name="update_manager.docker.step_restart_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_restart_desc</source>
+        <target>Stopping old container and starting new one</target>
+      </segment>
+    </unit>
+    <unit id="y5ibGqB" name="update_manager.docker.step_verify">
+      <segment state="translated">
+        <source>update_manager.docker.step_verify</source>
+        <target>Verify</target>
+      </segment>
+    </unit>
+    <unit id=".D286hQ" name="update_manager.docker.step_verify_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_verify_desc</source>
+        <target>Confirming Part-DB is running on the new version</target>
+      </segment>
+    </unit>
+    <unit id="s72BGA8" name="update_manager.docker.watchtower_status">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_status</source>
+        <target>Watchtower</target>
+      </segment>
+    </unit>
+    <unit id="HRw317s" name="update_manager.docker.watchtower_connected">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_connected</source>
+        <target>Connected</target>
+      </segment>
+    </unit>
+    <unit id="HcEk0Mh" name="update_manager.docker.watchtower_unreachable_short">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_unreachable_short</source>
+        <target>Unreachable</target>
+      </segment>
+    </unit>
+    <unit id="lMwRNf9" name="update_manager.docker.watchtower_not_configured">
+      <segment state="translated">
+        <source>update_manager.docker.watchtower_not_configured</source>
+        <target>Not configured</target>
+      </segment>
+    </unit>
+    <unit id="IceG9y3" name="update_manager.docker.step_stop">
+      <segment state="translated">
+        <source>update_manager.docker.step_stop</source>
+        <target>Stop Container</target>
+      </segment>
+    </unit>
+    <unit id="0sq_TgW" name="update_manager.docker.step_stop_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_stop_desc</source>
+        <target>Gracefully stopping the current container before recreation</target>
+      </segment>
+    </unit>
+    <unit id="et8F1eO" name="update_manager.docker.step_health">
+      <segment state="translated">
+        <source>update_manager.docker.step_health</source>
+        <target>Health Check</target>
+      </segment>
+    </unit>
+    <unit id="v5tHPJK" name="update_manager.docker.step_health_desc">
+      <segment state="translated">
+        <source>update_manager.docker.step_health_desc</source>
+        <target>Waiting for the new container to pass health checks</target>
+      </segment>
+    </unit>
+    <unit id="ZLRHnm_" name="update_manager.docker.updating">
+      <segment state="translated">
+        <source>update_manager.docker.updating</source>
+        <target>Updating Part-DB via Docker...</target>
+      </segment>
+    </unit>
     <unit id="b8JxfcX" name="part.create_from_info_provider.lot_filled_from_barcode">
       <segment state="translated">
         <source>part.create_from_info_provider.lot_filled_from_barcode</source>
@@ -12951,6 +14340,774 @@ Buerklin-API Authentication server:
       <segment state="translated">
         <source>project.bom_import.field_mapping.error.check_delimiter</source>
         <target>Mapping error: Check if you have selected the right delimiter!</target>
+      </segment>
+    </unit>
+    <unit id="zl1XJq0" name="settings.ai">
+      <segment state="translated">
+        <source>settings.ai</source>
+        <target>AI</target>
+      </segment>
+    </unit>
+    <unit id="NqxqdyX" name="settings.ai.openrouter">
+      <segment state="translated">
+        <source>settings.ai.openrouter</source>
+        <target>OpenRouter</target>
+      </segment>
+    </unit>
+    <unit id="tWtvoDT" name="settings.ai.lmstudio">
+      <segment state="translated">
+        <source>settings.ai.lmstudio</source>
+        <target>LMStudio</target>
+      </segment>
+    </unit>
+    <unit id="foBzBG2" name="settings.ips.ai_extractor.model">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.model</source>
+        <target>AI Model</target>
+      </segment>
+    </unit>
+    <unit id="PbXBTZO" name="settings.ips.ai_extractor.ai_platform">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.ai_platform</source>
+        <target>AI Platform</target>
+      </segment>
+    </unit>
+    <unit id="axA7_TL" name="settings.ips.ai_extractor.model.help">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.model.help</source>
+        <target>The AI model that should be used for extraction. Must support structured output.</target>
+      </segment>
+    </unit>
+    <unit id="H1SYgGs" name="settings.ips.ai_extractor.max_content_length">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.max_content_length</source>
+        <target>Max. Website Content length</target>
+      </segment>
+    </unit>
+    <unit id="SZWiZE3" name="settings.ips.ai_extractor.max_content_length.description">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.max_content_length.description</source>
+        <target>The maximum number of characters of the website that are sent to the AI service.</target>
+      </segment>
+    </unit>
+    <unit id="pCsAHOv" name="settings.ips.ai_extractor.output_language">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.output_language</source>
+        <target>Output language</target>
+      </segment>
+    </unit>
+    <unit id="NVHHgpD" name="settings.ips.ai_extractor.output_language.description">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.output_language.description</source>
+        <target>By default, the providers returns information in the same language as the website. With that option you can ask the AI to translate it for you. Might only work with certain models.</target>
+      </segment>
+    </unit>
+    <unit id="CAeeZlL" name="settings.ips.ai_extractor.additional_instructions">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.additional_instructions</source>
+        <target>Additional instructions</target>
+      </segment>
+    </unit>
+    <unit id=".UaUMk1" name="settings.ips.ai_extractor.additional_instructions.description">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.additional_instructions.description</source>
+        <target>The additional instructions will be appended to the system prompt.</target>
+      </segment>
+    </unit>
+    <unit id="Ycfssj2" name="info_providers.search.advanced_options">
+      <segment state="translated">
+        <source>info_providers.search.advanced_options</source>
+        <target>Advanced options</target>
+      </segment>
+    </unit>
+    <unit id="xfxZrXn" name="info_providers.no_cache_search">
+      <segment state="translated">
+        <source>info_providers.no_cache_search</source>
+        <target>Do not cache search results / Force fresh search</target>
+      </segment>
+    </unit>
+    <unit id="b_oc3T1" name="info_providers.no_cache_details">
+      <segment state="translated">
+        <source>info_providers.no_cache_details</source>
+        <target>Do not cache result details / Force fresh part detail retrieval</target>
+      </segment>
+    </unit>
+    <unit id="Ja8CCDb" name="info_providers.from_url.method.generic_web">
+      <segment state="translated">
+        <source>info_providers.from_url.method.generic_web</source>
+        <target>Classic Web Scraper</target>
+      </segment>
+    </unit>
+    <unit id="s0kUzFW" name="info_providers.from_url.method.ai_web">
+      <segment state="translated">
+        <source>info_providers.from_url.method.ai_web</source>
+        <target>AI Web Scraper</target>
+      </segment>
+    </unit>
+    <unit id="HEFB1OC" name="info_providers.from_url.method">
+      <segment state="translated">
+        <source>info_providers.from_url.method</source>
+        <target>Method</target>
+      </segment>
+    </unit>
+    <unit id="9pG0VtU" name="info_providers.from_url.no_cache">
+      <segment state="translated">
+        <source>info_providers.from_url.no_cache</source>
+        <target>Ignore cache / Force fresh info retrieval</target>
+      </segment>
+    </unit>
+    <unit id="302Jgvm" name="info_providers.from_url.skip_delegation">
+      <segment state="translated">
+        <source>info_providers.from_url.skip_delegation</source>
+        <target>Do not delegate to specialized info providers</target>
+      </segment>
+    </unit>
+    <unit id="pruvlK8" name="settings.ips.ai_extractor">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor</source>
+        <target>AI Web Extractor</target>
+      </segment>
+    </unit>
+    <unit id="wILs7pS" name="settings.ips.ai_extractor.description">
+      <segment state="translated">
+        <source>settings.ips.ai_extractor.description</source>
+        <target>This info provider uses a large language model (LLM) to extract detailed part information from arbitrary shop URLs.</target>
+      </segment>
+    </unit>
+    <unit id="1ShZ.1i" name="settings.ai.openrouter.help">
+      <segment state="translated">
+        <source>settings.ai.openrouter.help</source>
+        <target>Access to many AI models via openrouter.ai</target>
+      </segment>
+    </unit>
+    <unit id="kRcgIf0" name="settings.ai.lmstudio.hosturl">
+      <segment state="translated">
+        <source>settings.ai.lmstudio.hosturl</source>
+        <target>Host URL</target>
+      </segment>
+    </unit>
+    <unit id="UeFbCNh" name="settings.ai.ollama">
+      <segment state="translated">
+        <source>settings.ai.ollama</source>
+        <target>Ollama</target>
+      </segment>
+    </unit>
+    <unit id="9nfJ_vr" name="settings.ai.ollama.endpoint">
+      <segment state="translated">
+        <source>settings.ai.ollama.endpoint</source>
+        <target>Endpoint URL</target>
+      </segment>
+    </unit>
+    <unit id="67dSwE5" name="settings.ai.ollama.apiKey">
+      <segment state="translated">
+        <source>settings.ai.ollama.apiKey</source>
+        <target>API Key</target>
+      </segment>
+    </unit>
+    <unit id="VxXEQUD" name="settings.ai.timeout">
+      <segment state="translated">
+        <source>settings.ai.timeout</source>
+        <target>Timeout</target>
+      </segment>
+    </unit>
+    <unit id="vRgtpoJ" name="settings.ai.timeout.help">
+      <segment state="translated">
+        <source>settings.ai.timeout.help</source>
+        <target>Maximum time in seconds to wait for a response. Local AI inference might take multiple minutes, cloud inference is normally faster.</target>
+      </segment>
+    </unit>
+    <unit id="kuDv.So" name="browser_plugin.recent_pages.title">
+      <segment state="translated">
+        <source>browser_plugin.recent_pages.title</source>
+        <target>Recent browser submissions</target>
+      </segment>
+    </unit>
+    <unit id="AjNj8wk" name="browser_plugin.recent_pages.help">
+      <segment state="translated">
+        <source>browser_plugin.recent_pages.help</source>
+        <target>Pages recently submitted from your browser extension. Click to create a part using the captured HTML.</target>
+      </segment>
+    </unit>
+    <unit id="lVUU9s7" name="settings.ips.browser_plugin">
+      <segment state="translated">
+        <source>settings.ips.browser_plugin</source>
+        <target>Browser plugin</target>
+      </segment>
+    </unit>
+    <unit id="IrJs3fI" name="settings.ips.browser_plugin.description">
+      <segment state="translated">
+        <source>settings.ips.browser_plugin.description</source>
+        <target>The browser plugin allows to submit pages to Part-DB directly from a browser to create new parts. HTML content is submitted, so that extraction even works on DDOS protected pages, or pages requiring javascript for correct rendering. The Generic Web or AI Web extractor needs to be enabled to be useful.</target>
+      </segment>
+    </unit>
+    <unit id="_8UrMCB" name="settings.ips.browser_plugin.enabled.help">
+      <segment state="translated">
+        <source>settings.ips.browser_plugin.enabled.help</source>
+        <target>When enabled users with the info provider permission can submit pages to Part-DB and retrieve them later.</target>
+      </segment>
+    </unit>
+    <unit id="JqcvhX_" name="system.app_secret.insecure.title">
+      <segment state="translated">
+        <source>system.app_secret.insecure.title</source>
+        <target>Insecure APP_SECRET</target>
+      </segment>
+    </unit>
+    <unit id="XSSYWTJ" name="system.app_secret.insecure.message">
+      <segment state="translated">
+        <source>system.app_secret.insecure.message</source>
+        <target>The &lt;code&gt;APP_SECRET&lt;/code&gt; environment variable is set to the default value shipped with Part-DB. This is a security risk! Set it to a new random value in your &lt;code&gt;.env.local&lt;/code&gt; or &lt;code&gt;docker-compose.yaml&lt;/code&gt; file.</target>
+      </segment>
+    </unit>
+    <unit id="e7.f3m0" name="system.app_secret.insecure.suggestion">
+      <segment state="translated">
+        <source>system.app_secret.insecure.suggestion</source>
+        <target>You can use this randomly generated value (share it with nobody):</target>
+      </segment>
+    </unit>
+    <unit id="pJfdMQU" name="search.extensive_matching">
+      <segment state="translated">
+        <source>search.extensive_matching</source>
+        <target>Extensive Matching</target>
+      </segment>
+    </unit>
+    <unit id="YO2ZB66" name="search.permit_wildcards">
+      <segment state="translated">
+        <source>search.permit_wildcards</source>
+        <target>Treat &lt;code&gt;%&lt;/code&gt; and &lt;code&gt;_&lt;/code&gt; as wildcards</target>
+      </segment>
+    </unit>
+    <unit id="_nxvnMn" name="search.regexmatching.help">
+      <segment state="translated">
+        <source>search.regexmatching.help</source>
+        <target>Use regular expressions (without pattern delimiters) e.g. %regex% to search for parts.</target>
+      </segment>
+    </unit>
+    <unit id="mry8ytG" name="search.extensive_matching.help">
+      <segment state="translated">
+        <source>search.extensive_matching.help</source>
+        <target>The search term is split up into parts, and a result is found, when each part is contained in any field. Without this mode the full search term has to be contained in a single field.</target>
+      </segment>
+    </unit>
+    <unit id="zLnKtwP" name="search.permit_wildcards.help">
+      <segment state="translated">
+        <source>search.permit_wildcards.help</source>
+        <target>If enabled, _ is treated as a wildcard for one character and % is treated as a wildcard for zero or more characters.</target>
+      </segment>
+    </unit>
+    <unit id="OP7MacF" name="system.trusted_hosts.unconfigured.title">
+      <segment state="translated">
+        <source>system.trusted_hosts.unconfigured.title</source>
+        <target>TRUSTED_HOSTS not configured</target>
+      </segment>
+    </unit>
+    <unit id="88NkHLV" name="system.trusted_hosts.unconfigured.message">
+      <segment state="translated">
+        <source>system.trusted_hosts.unconfigured.message</source>
+        <target>The &lt;code&gt;TRUSTED_HOSTS&lt;/code&gt; environment variable is not set. This means Part-DB will accept requests for any host name, which can be a security risk (e.g. HTTP Host header injection). It is recommended to restrict this to the host names Part-DB is actually reachable under.</target>
+      </segment>
+    </unit>
+    <unit id="qZ_kgWT" name="system.trusted_hosts.unconfigured.suggestion">
+      <segment state="translated">
+        <source>system.trusted_hosts.unconfigured.suggestion</source>
+        <target>Set it to a regular expression matching all host names Part-DB should be reachable under, e.g. based on the host name you used to access this page. Note that the required quoting differs depending on where you set it:</target>
+      </segment>
+    </unit>
+    <unit id="ie4thSr" name="system.trusted_hosts.unconfigured.env_example">
+      <segment state="translated">
+        <source>system.trusted_hosts.unconfigured.env_example</source>
+        <target>In your &lt;code&gt;.env.local&lt;/code&gt; file, the value must be wrapped in single quotes:</target>
+      </segment>
+    </unit>
+    <unit id="ni3hSTN" name="system.trusted_hosts.unconfigured.docker_example">
+      <segment state="translated">
+        <source>system.trusted_hosts.unconfigured.docker_example</source>
+        <target>In &lt;code&gt;docker-compose.yaml&lt;/code&gt;, the value must NOT be quoted:</target>
+      </segment>
+    </unit>
+    <unit id="cEwxoSj" name="info_providers.provider_key">
+      <segment state="translated">
+        <source>info_providers.provider_key</source>
+        <target>Info provider</target>
+      </segment>
+    </unit>
+    <unit id="0sjPRNV" name="info_providers.provider_id">
+      <segment state="translated">
+        <source>info_providers.provider_id</source>
+        <target>Provider ID</target>
+      </segment>
+    </unit>
+    <unit id="2DzzAxZ" name="info_providers.provider_url">
+      <segment state="translated">
+        <source>info_providers.provider_url</source>
+        <target>Provider URL</target>
+      </segment>
+    </unit>
+    <unit id="4v3QmF6" name="part.edit.provider_reference">
+      <segment state="translated">
+        <source>part.edit.provider_reference</source>
+        <target>Info provider reference</target>
+      </segment>
+    </unit>
+    <unit id="9X2qEi7" name="log.element_edited.changed_fields.providerReference.provider_key">
+      <segment state="translated">
+        <source>log.element_edited.changed_fields.providerReference.provider_key</source>
+        <target>Information provider</target>
+      </segment>
+    </unit>
+    <unit id="MWXgWDb" name="log.element_edited.changed_fields.providerReference.provider_id">
+      <segment state="translated">
+        <source>log.element_edited.changed_fields.providerReference.provider_id</source>
+        <target>Provider ID</target>
+      </segment>
+    </unit>
+    <unit id="83fSFvo" name="part.info_provider_reference.updated_never">
+      <segment state="translated">
+        <source>part.info_provider_reference.updated_never</source>
+        <target>Never updated</target>
+      </segment>
+    </unit>
+    <unit id="yIK_Wtj" name="part.edit.provider_reference.warning">
+      <segment state="translated">
+        <source>part.edit.provider_reference.warning</source>
+        <target>Warning: Changing values here can break the info retrieval mechanism! You should use the "update from info provider" functionality whenever possible.</target>
+      </segment>
+    </unit>
+    <unit id="bNrxe9i" name="perm.api.use_mcp">
+      <segment state="translated">
+        <source>perm.api.use_mcp</source>
+        <target>Use MCP tools (for AI agents)</target>
+      </segment>
+    </unit>
+    <unit id="ced_8yl" name="api.api_endpoints.mcp_url">
+      <segment state="translated">
+        <source>api.api_endpoints.mcp_url</source>
+        <target>MCP endpoint</target>
+      </segment>
+    </unit>
+    <unit id="a1wK4h_" name="info_providers.capabilities.parameters">
+      <segment state="translated">
+        <source>info_providers.capabilities.parameters</source>
+        <target>Parameters</target>
+      </segment>
+    </unit>
+    <unit id="QivC_me" name="info_providers.expensive">
+      <segment state="translated">
+        <source>info_providers.expensive</source>
+        <target>Expensive</target>
+      </segment>
+    </unit>
+    <unit id="Hiw406i" name="info_providers.expensive.tooltip">
+      <segment state="translated">
+        <source>info_providers.expensive.tooltip</source>
+        <target>Using this info provider can cause additional costs, or has very strict rate limits.</target>
+      </segment>
+    </unit>
+    <unit id="XMqiyE0" name="settings.ips.tme.preferMetricFootprint">
+      <segment state="translated">
+        <source>settings.ips.tme.preferMetricFootprint</source>
+        <target>Prefer metric footprint when both metric and imperial are available</target>
+      </segment>
+    </unit>
+    <unit id="APD.vym" name="oauth.authorize.title">
+      <segment state="translated">
+        <source>oauth.authorize.title</source>
+        <target>Authorize application</target>
+      </segment>
+    </unit>
+    <unit id="n4Olw59" name="oauth.authorize.description">
+      <segment state="translated">
+        <source>oauth.authorize.description</source>
+        <target>The application "%client%" wants to access your Part-DB account.</target>
+      </segment>
+    </unit>
+    <unit id="AkIKt6J" name="oauth.authorize.scopes_intro">
+      <segment state="translated">
+        <source>oauth.authorize.scopes_intro</source>
+        <target>It is requesting the following level of access:</target>
+      </segment>
+    </unit>
+    <unit id="d0cDOn1" name="oauth.authorize.revoke_hint">
+      <segment state="translated">
+        <source>oauth.authorize.revoke_hint</source>
+        <target>You can revoke this access at any time from your user settings.</target>
+      </segment>
+    </unit>
+    <unit id="qfC3t6R" name="oauth.authorize.approve">
+      <segment state="translated">
+        <source>oauth.authorize.approve</source>
+        <target>Approve</target>
+      </segment>
+    </unit>
+    <unit id="i6N1wqE" name="oauth.authorize.deny">
+      <segment state="translated">
+        <source>oauth.authorize.deny</source>
+        <target>Deny</target>
+      </segment>
+    </unit>
+    <unit id="9fKg3GS" name="oauth.authorize.scope_level.label">
+      <segment state="translated">
+        <source>oauth.authorize.scope_level.label</source>
+        <target>Access level to grant</target>
+      </segment>
+    </unit>
+    <unit id="whHHRxz" name="oauth.authorize.scope_level.help">
+      <segment state="translated">
+        <source>oauth.authorize.scope_level.help</source>
+        <target>You can grant a more restrictive access level than the application requested, but it might break compatibility with the application.</target>
+      </segment>
+    </unit>
+    <unit id="jQbm4mO" name="oauth.authorize.friendly_name.label">
+      <segment state="translated">
+        <source>oauth.authorize.friendly_name.label</source>
+        <target>Friendly name (optional)</target>
+      </segment>
+    </unit>
+    <unit id="MPk5zZ9" name="oauth.authorize.friendly_name.help">
+      <segment state="translated">
+        <source>oauth.authorize.friendly_name.help</source>
+        <target>Give this connection a name to tell it apart from other devices using the same application.</target>
+      </segment>
+    </unit>
+    <unit id="rPyrHS2" name="oauth.authorize.ttl.label">
+      <segment state="translated">
+        <source>oauth.authorize.ttl.label</source>
+        <target>Stay signed in for</target>
+      </segment>
+    </unit>
+    <unit id="Z.S5.x2" name="oauth.authorize.ttl.default">
+      <segment state="translated">
+        <source>oauth.authorize.ttl.default</source>
+        <target>Default (%days% days)</target>
+      </segment>
+    </unit>
+    <unit id="yJyRFXa" name="oauth.authorize.ttl.days">
+      <segment state="translated">
+        <source>oauth.authorize.ttl.days</source>
+        <target>%days% days</target>
+      </segment>
+    </unit>
+    <unit id="2wcqLve" name="oauth.authorize.ttl.help">
+      <segment state="translated">
+        <source>oauth.authorize.ttl.help</source>
+        <target>After this period, the application will need you to sign in again.</target>
+      </segment>
+    </unit>
+    <unit id="8gH7qHS" name="oauth.authorize.elevated_warning">
+      <segment state="translated">
+        <source>oauth.authorize.elevated_warning</source>
+        <target>This application is requesting administrative or full account access, well beyond normal read/edit access. Only approve this if you fully trust the application.</target>
+      </segment>
+    </unit>
+    <unit id="DYZhxF6" name="oauth.authorize.elevated_badge">
+      <segment state="translated">
+        <source>oauth.authorize.elevated_badge</source>
+        <target>Elevated access</target>
+      </segment>
+    </unit>
+    <unit id="0SCwv63" name="user.settings.oauth_connected_apps">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps</source>
+        <target>Connected apps</target>
+      </segment>
+    </unit>
+    <unit id="tb_dGmL" name="user.settings.oauth_connected_apps.description">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.description</source>
+        <target>These applications signed in through the Part-DB OAuth login and were granted access to your account. Revoking an application here immediately ends its access; it will need to go through the login/consent screen again to reconnect.</target>
+      </segment>
+    </unit>
+    <unit id="uxc7X_D" name="user.settings.oauth_connected_apps.none_yet">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.none_yet</source>
+        <target>No connected apps yet.</target>
+      </segment>
+    </unit>
+    <unit id="MDTWYod" name="user.settings.oauth_connected_apps.app_name">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.app_name</source>
+        <target>Application</target>
+      </segment>
+    </unit>
+    <unit id="3.pFaZG" name="user.settings.oauth_connected_apps.access_until">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.access_until</source>
+        <target>Access valid until</target>
+      </segment>
+    </unit>
+    <unit id="cOG4vDe" name="user.settings.oauth_connected_apps.revoke">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.revoke</source>
+        <target>Revoke</target>
+      </segment>
+    </unit>
+    <unit id="0ecnHaq" name="user.settings.oauth_connected_apps.revoke.title">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.revoke.title</source>
+        <target>Do you really want to revoke access for this application?</target>
+      </segment>
+    </unit>
+    <unit id="WfLqvJ6" name="user.settings.oauth_connected_apps.revoke.message">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.revoke.message</source>
+        <target>The application will immediately lose access to Part-DB and will have to go through the login/consent screen again to reconnect. This action can not be undone!</target>
+      </segment>
+    </unit>
+    <unit id="rSf25Vc" name="user.settings.oauth_connected_apps.revoked">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.revoked</source>
+        <target>Access revoked successfully!</target>
+      </segment>
+    </unit>
+    <unit id="mgk6ZSv" name="user.settings.oauth_connected_apps.scope_level">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.scope_level</source>
+        <target>Access level</target>
+      </segment>
+    </unit>
+    <unit id="Irn2ps." name="user.settings.oauth_connected_apps.last_used">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.last_used</source>
+        <target>Last used</target>
+      </segment>
+    </unit>
+    <unit id="1LsyrkP" name="user.settings.oauth_connected_apps.connected_since">
+      <segment state="translated">
+        <source>user.settings.oauth_connected_apps.connected_since</source>
+        <target>Connected since</target>
+      </segment>
+    </unit>
+    <unit id="F3PROlR" name="perm.system.manage_oauth_clients">
+      <segment state="translated">
+        <source>perm.system.manage_oauth_clients</source>
+        <target>Manage OAuth2 clients</target>
+      </segment>
+    </unit>
+    <unit id="TCKm90l" name="oauth_clients.title">
+      <segment state="translated">
+        <source>oauth_clients.title</source>
+        <target>OAuth2 clients</target>
+      </segment>
+    </unit>
+    <unit id="GbvDqBV" name="oauth_clients.description">
+      <segment state="translated">
+        <source>oauth_clients.description</source>
+        <target>Applications registered with Part-DB's OAuth2 server (usually through open Dynamic Client Registration, RFC 7591 - any application can self-register, so the real access control gate is the per-user consent screen a user sees before granting one of these access to their account). Deleting a client here immediately revokes all access it was ever granted and prevents it from being used again.</target>
+      </segment>
+    </unit>
+    <unit id="6DTnzEE" name="oauth_clients.none_yet">
+      <segment state="translated">
+        <source>oauth_clients.none_yet</source>
+        <target>No OAuth2 clients registered yet.</target>
+      </segment>
+    </unit>
+    <unit id="x.F3MN4" name="oauth_clients.name">
+      <segment state="translated">
+        <source>oauth_clients.name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="ss2tun8" name="oauth_clients.client_id">
+      <segment state="translated">
+        <source>oauth_clients.client_id</source>
+        <target>Client ID</target>
+      </segment>
+    </unit>
+    <unit id="azV0sIv" name="oauth_clients.scopes">
+      <segment state="translated">
+        <source>oauth_clients.scopes</source>
+        <target>Scopes</target>
+      </segment>
+    </unit>
+    <unit id="1dbGJ7H" name="oauth_clients.redirect_uris">
+      <segment state="translated">
+        <source>oauth_clients.redirect_uris</source>
+        <target>Redirect URIs</target>
+      </segment>
+    </unit>
+    <unit id=".axlZHX" name="oauth_clients.status">
+      <segment state="translated">
+        <source>oauth_clients.status</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="U4vNBxV" name="oauth_clients.active">
+      <segment state="translated">
+        <source>oauth_clients.active</source>
+        <target>Active</target>
+      </segment>
+    </unit>
+    <unit id="qte22mM" name="oauth_clients.inactive">
+      <segment state="translated">
+        <source>oauth_clients.inactive</source>
+        <target>Inactive</target>
+      </segment>
+    </unit>
+    <unit id="ux5P.d3" name="oauth_clients.dynamically_registered">
+      <segment state="translated">
+        <source>oauth_clients.dynamically_registered</source>
+        <target>Auto-registered</target>
+      </segment>
+    </unit>
+    <unit id="oo744Uz" name="oauth_clients.dynamically_registered.help">
+      <segment state="translated">
+        <source>oauth_clients.dynamically_registered.help</source>
+        <target>This client registered itself automatically via Dynamic Client Registration (RFC 7591), rather than being created by an administrator.</target>
+      </segment>
+    </unit>
+    <unit id="Pa66ymI" name="oauth_clients.live_tokens">
+      <segment state="translated">
+        <source>oauth_clients.live_tokens</source>
+        <target>Live access tokens</target>
+      </segment>
+    </unit>
+    <unit id="FxxYm5n" name="oauth_clients.live_refresh_tokens">
+      <segment state="translated">
+        <source>oauth_clients.live_refresh_tokens</source>
+        <target>Live refresh tokens</target>
+      </segment>
+    </unit>
+    <unit id="CjdVrcW" name="oauth_clients.delete">
+      <segment state="translated">
+        <source>oauth_clients.delete</source>
+        <target>Delete</target>
+      </segment>
+    </unit>
+    <unit id="LOD0h3Q" name="oauth_clients.delete.title">
+      <segment state="translated">
+        <source>oauth_clients.delete.title</source>
+        <target>Do you really want to delete this OAuth2 client?</target>
+      </segment>
+    </unit>
+    <unit id="XipnUiR" name="oauth_clients.delete.message">
+      <segment state="translated">
+        <source>oauth_clients.delete.message</source>
+        <target>This immediately revokes all access this application was ever granted, for every user. This action can not be undone; the application would have to register again to reconnect.</target>
+      </segment>
+    </unit>
+    <unit id="tbHDOBp" name="oauth_clients.deleted">
+      <segment state="translated">
+        <source>oauth_clients.deleted</source>
+        <target>OAuth2 client deleted successfully!</target>
+      </segment>
+    </unit>
+    <unit id="7vdBsoN" name="oauth_clients.create.title">
+      <segment state="translated">
+        <source>oauth_clients.create.title</source>
+        <target>Register a new client manually</target>
+      </segment>
+    </unit>
+    <unit id="NxxzyP." name="oauth_clients.new_button">
+      <segment state="translated">
+        <source>oauth_clients.new_button</source>
+        <target>Register new client</target>
+      </segment>
+    </unit>
+    <unit id="7XHDbAc" name="oauth_clients.create.name">
+      <segment state="translated">
+        <source>oauth_clients.create.name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="Id1.iuI" name="oauth_clients.create.redirect_uris">
+      <segment state="translated">
+        <source>oauth_clients.create.redirect_uris</source>
+        <target>Redirect URIs</target>
+      </segment>
+    </unit>
+    <unit id="wyfhoYU" name="oauth_clients.create.redirect_uris.help">
+      <segment state="translated">
+        <source>oauth_clients.create.redirect_uris.help</source>
+        <target>One URI per line. Must be https://, a loopback http:// address (127.0.0.1/localhost), or a private-use URI scheme (e.g. com.example.app:/callback).</target>
+      </segment>
+    </unit>
+    <unit id="mF.lZGT" name="oauth_clients.create.scopes">
+      <segment state="translated">
+        <source>oauth_clients.create.scopes</source>
+        <target>Allowed access levels</target>
+      </segment>
+    </unit>
+    <unit id="FQP97Iy" name="oauth_clients.create.scopes.elevated_help">
+      <segment state="translated">
+        <source>oauth_clients.create.scopes.elevated_help</source>
+        <target>Only allow "Admin" or "Full" for clients you fully trust and control - self-registered clients (e.g. auto-provisioning MCP apps) can never request these levels themselves.</target>
+      </segment>
+    </unit>
+    <unit id="PPgniXW" name="oauth_clients.create.submit">
+      <segment state="translated">
+        <source>oauth_clients.create.submit</source>
+        <target>Register client</target>
+      </segment>
+    </unit>
+    <unit id="lUKK..z" name="oauth_clients.created">
+      <segment state="translated">
+        <source>oauth_clients.created</source>
+        <target>OAuth2 client registered successfully! Client ID: %client_id%</target>
+      </segment>
+    </unit>
+    <unit id="TPIdHxC" name="oauth_clients.edit">
+      <segment state="translated">
+        <source>oauth_clients.edit</source>
+        <target>Edit</target>
+      </segment>
+    </unit>
+    <unit id="tSop1t3" name="oauth_clients.edit.title">
+      <segment state="translated">
+        <source>oauth_clients.edit.title</source>
+        <target>Edit OAuth2 client</target>
+      </segment>
+    </unit>
+    <unit id="VaBQ9jX" name="oauth_clients.edit.active">
+      <segment state="translated">
+        <source>oauth_clients.edit.active</source>
+        <target>Active</target>
+      </segment>
+    </unit>
+    <unit id="6CH6SAh" name="oauth_clients.edit.active.help">
+      <segment state="translated">
+        <source>oauth_clients.edit.active.help</source>
+        <target>Inactive clients can no longer be used to request or refresh access tokens, but their existing registration and live tokens are kept until they are deleted.</target>
+      </segment>
+    </unit>
+    <unit id="hbA0R.U" name="oauth_clients.edit.submit">
+      <segment state="translated">
+        <source>oauth_clients.edit.submit</source>
+        <target>Save changes</target>
+      </segment>
+    </unit>
+    <unit id="1WsHABD" name="oauth_clients.edit.back">
+      <segment state="translated">
+        <source>oauth_clients.edit.back</source>
+        <target>Back to overview</target>
+      </segment>
+    </unit>
+    <unit id="E5sueue" name="oauth_clients.updated">
+      <segment state="translated">
+        <source>oauth_clients.updated</source>
+        <target>OAuth2 client updated successfully!</target>
+      </segment>
+    </unit>
+    <unit id="QCg5KCx" name="project.edit.bom.performance_mode_warning">
+      <segment state="translated">
+        <source>project.edit.bom.performance_mode_warning</source>
+        <target>This project contains %count% BOM entries. It is too big to be edited here.</target>
+      </segment>
+    </unit>
+    <unit id="LEreMQo" name="project.edit.bom.performance_mode_warning.link">
+      <segment state="translated">
+        <source>project.edit.bom.performance_mode_warning.link</source>
+        <target>Edit BOM entries via the BOM table view instead.</target>
+      </segment>
+    </unit>
+    <unit id="OMOXH6o" name="project.bom_entry.edit.back_to_bom">
+      <segment state="translated">
+        <source>project.bom_entry.edit.back_to_bom</source>
+        <target>Back to project BOM</target>
+      </segment>
+    </unit>
+    <unit id="M1leSpV" name="project.bom_entry.edit.title">
+      <segment state="translated">
+        <source>project.bom_entry.edit.title</source>
+        <target>Edit BOM entry #%id% of project</target>
       </segment>
     </unit>
   </file>

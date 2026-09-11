@@ -42,7 +42,6 @@ declare(strict_types=1);
 namespace App\Services\LabelSystem\BarcodeScanner;
 
 use App\Entity\LabelSystem\LabelSupportedElement;
-use App\Entity\Parts\Manufacturer;
 use App\Entity\Parts\Part;
 use App\Entity\Parts\PartLot;
 use App\Entity\Parts\StorageLocation;
@@ -51,8 +50,6 @@ use App\Repository\Parts\PartRepository;
 use App\Services\InfoProviderSystem\PartInfoRetriever;
 use App\Services\InfoProviderSystem\ProviderRegistry;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityNotFoundException;
-use InvalidArgumentException;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
@@ -150,6 +147,10 @@ final readonly class BarcodeScanResultHandler
                 ?? $this->em->getRepository(Part::class)->getPartBySPN($barcodeScan->asin);
         }
 
+        if ($barcodeScan instanceof TMEBarcodeScanResult) {
+            return $this->resolvePartFromTME($barcodeScan);
+        }
+
         return null;
     }
 
@@ -236,6 +237,26 @@ final readonly class BarcodeScanResultHandler
     }
 
 
+    private function resolvePartFromTME(TMEBarcodeScanResult $barcodeScan): ?Part
+    {
+        $pn = $barcodeScan->tmePartNumber;
+        if ($pn) {
+            $part = $this->em->getRepository(Part::class)->getPartByProviderInfo($pn);
+            if ($part !== null) {
+                return $part;
+            }
+
+            //Try to find the part by SPN/SKU
+            $part = $this->em->getRepository(Part::class)->getPartBySPN($pn);
+            if ($part !== null) {
+                return $part;
+            }
+        }
+
+        // Fallback: search by MPN
+        return $this->em->getRepository(Part::class)->getPartByMPN($barcodeScan->mpn, $barcodeScan->manufacturer);
+    }
+
     /**
      * Tries to extract creation information for a part from the given barcode scan result. This can be used to
      * automatically fill in the info provider reference of a part, when creating a new part based on the scan result.
@@ -247,6 +268,20 @@ final readonly class BarcodeScanResultHandler
      */
     public function getCreateInfos(BarcodeScanResultInterface $scanResult): ?array
     {
+        // TME
+        if ($scanResult instanceof TMEBarcodeScanResult) {
+            if ($scanResult->tmePartNumber === null) {
+                return null;
+            }
+            return [
+                'providerKey' => 'tme',
+                'providerId' => $scanResult->tmePartNumber,
+                'lotAmount' => $scanResult->quantity,
+                'lotName' => $scanResult->purchaseOrder,
+                'lotUserBarcode' => $scanResult->rawInput,
+            ];
+        }
+
         // LCSC
         if ($scanResult instanceof LCSCBarcodeScanResult) {
             return [
@@ -310,14 +345,14 @@ final readonly class BarcodeScanResultHandler
         if ($vendor === 'digikey') {
             return [
                 'providerKey' => 'digikey',
-                'providerId' => $scanResult->supplierPartNumber ?? throw new \RuntimeException('Digikey barcode does not contain required supplier part number'),
+                'providerId' => $scanResult->digikeyPartNumber ?? $scanResult->supplierPartNumber ?? throw new \RuntimeException('Digikey barcode does not contain required supplier part number'),
                 'lotAmount' => $scanResult->quantity,
                 'lotName' => $scanResult->digikeyInvoiceNumber ?? $scanResult->digikeySalesOrderNumber ?? $scanResult->customerPO,
                 'lotUserBarcode' => $scanResult->rawInput,
             ];
         }
 
-        // Element14: can use supplierPartNumber directly
+        // Element14: can use supplierPartNumber directly, as the Element14Provider will try to resolve it to a SKU number if necessary
         if ($vendor === 'element14') {
             return [
                 'providerKey' => 'element14',

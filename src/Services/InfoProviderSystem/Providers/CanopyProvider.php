@@ -23,15 +23,12 @@ declare(strict_types=1);
 
 namespace App\Services\InfoProviderSystem\Providers;
 
-use App\Services\InfoProviderSystem\DTOs\FileDTO;
 use App\Services\InfoProviderSystem\DTOs\PartDetailDTO;
 use App\Services\InfoProviderSystem\DTOs\PriceDTO;
+use App\Services\InfoProviderSystem\DTOs\ProviderInfoDTO;
 use App\Services\InfoProviderSystem\DTOs\PurchaseInfoDTO;
-use App\Services\InfoProviderSystem\DTOs\SearchResultDTO;
-use App\Settings\InfoProviderSystem\BuerklinSettings;
 use App\Settings\InfoProviderSystem\CanopySettings;
 use Psr\Cache\CacheItemPoolInterface;
-use Symfony\Component\DependencyInjection\Attribute\When;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
@@ -39,6 +36,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  */
 class CanopyProvider implements InfoProviderInterface
 {
+    public const PROVIDER_KEY = 'canopy';
 
     public const BASE_URL = "https://rest.canopyapi.co/api";
     public const SEARCH_API_URL = self::BASE_URL . "/amazon/search";
@@ -52,20 +50,22 @@ class CanopyProvider implements InfoProviderInterface
 
     }
 
-    public function getProviderInfo(): array
+    public function getProviderInfo(): ProviderInfoDTO
     {
-        return [
-            'name' => 'Amazon (Canopy)',
-            'description' => 'Retrieves part infos from Amazon using the Canopy API',
-            'url' => 'https://canopyapi.co',
-            'disabled_help' => 'Set Canopy API key in the provider configuration to enable this provider',
-            'settings_class' => CanopySettings::class
-        ];
-    }
-
-    public function getProviderKey(): string
-    {
-        return 'canopy';
+        return new ProviderInfoDTO(
+            key: self::PROVIDER_KEY,
+            name: 'Amazon (Canopy)',
+            description: 'Retrieves part infos from Amazon using the Canopy API',
+            url: 'https://canopyapi.co',
+            disabledHelp: 'Set Canopy API key in the provider configuration to enable this provider',
+            settingsClass: CanopySettings::class,
+            capabilities: [
+                ProviderCapabilities::BASIC,
+                ProviderCapabilities::PICTURE,
+                ProviderCapabilities::PRICE,
+            ],
+            expensive: true,
+        );
     }
 
     public function isActive(): bool
@@ -111,7 +111,7 @@ class CanopyProvider implements InfoProviderInterface
         return null;
     }
 
-    public function searchByKeyword(string $keyword): array
+    public function searchByKeyword(string $keyword, array $options = []): array
     {
         $response = $this->httpClient->request('GET', self::SEARCH_API_URL, [
             'query' => [
@@ -131,7 +131,7 @@ class CanopyProvider implements InfoProviderInterface
 
 
             $dto = new PartDetailDTO(
-                provider_key: $this->getProviderKey(),
+                provider_key: self::PROVIDER_KEY,
                 provider_id: $result['asin'],
                 name: $result["title"],
                 description: "",
@@ -177,15 +177,17 @@ class CanopyProvider implements InfoProviderInterface
         return new PurchaseInfoDTO(self::DISTRIBUTOR_NAME, order_number: $asin, prices: $priceDtos, product_url: $this->productPageFromASIN($asin));
     }
 
-    public function getDetails(string $id): PartDetailDTO
+    public function getDetails(string $id, array $options = []): PartDetailDTO
     {
         //Check that the id is a valid ASIN (10 characters, letters and numbers)
         if (!preg_match('/^[A-Z0-9]{10}$/', $id)) {
             throw new \InvalidArgumentException("The id must be a valid ASIN (10 characters, letters and numbers)");
         }
 
+        $do_not_cache = ($options[self::OPTION_NO_CACHE] ?? false) || $this->settings->alwaysGetDetails;
+
         //Use cached details if available and the settings allow it, to avoid unnecessary API requests, since the search results already contain most of the details
-        if(!$this->settings->alwaysGetDetails && ($cached = $this->getFromCache($id)) !== null) {
+        if(!$do_not_cache && ($cached = $this->getFromCache($id)) !== null) {
             return $cached;
         }
 
@@ -207,7 +209,7 @@ class CanopyProvider implements InfoProviderInterface
         }
 
         return new PartDetailDTO(
-            provider_key: $this->getProviderKey(),
+            provider_key: self::PROVIDER_KEY,
             provider_id: $product['asin'],
             name: $product['title'],
             description: '',
@@ -220,12 +222,4 @@ class CanopyProvider implements InfoProviderInterface
         );
     }
 
-    public function getCapabilities(): array
-    {
-        return [
-            ProviderCapabilities::BASIC,
-            ProviderCapabilities::PICTURE,
-            ProviderCapabilities::PRICE,
-        ];
-    }
 }

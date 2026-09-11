@@ -26,25 +26,28 @@ namespace App\Services\InfoProviderSystem\Providers;
 /**
  * This enum contains all capabilities (which data it can provide) a provider can have.
  */
-enum ProviderCapabilities
+enum ProviderCapabilities: string
 {
     /** Basic information about a part, like the name, description, part number, manufacturer etc */
-    case BASIC;
+    case BASIC = 'BASIC';
 
     /** Provider can provide a picture for a part */
-    case PICTURE;
+    case PICTURE = 'PICTURE';
 
     /** Provider can provide datasheets for a part */
-    case DATASHEET;
+    case DATASHEET = 'DATASHEET';
 
     /** Provider can provide prices for a part */
-    case PRICE;
+    case PRICE = 'PRICE';
 
     /** Information about the footprint of a part */
-    case FOOTPRINT;
+    case FOOTPRINT = 'FOOTPRINT';
 
     /** Provider can provide GTIN for a part */
-    case GTIN;
+    case GTIN = 'GTIN';
+
+    /** Provider can provide parameters/specifications for a part */
+    case PARAMETERS = 'PARAMETERS';
 
     /**
      * Get the order index for displaying capabilities in a stable order.
@@ -59,6 +62,7 @@ enum ProviderCapabilities
             self::PRICE => 4,
             self::FOOTPRINT => 5,
             self::GTIN => 6,
+            self::PARAMETERS => 7,
         };
     }
 
@@ -71,6 +75,7 @@ enum ProviderCapabilities
                 self::DATASHEET => 'datasheet',
                 self::PRICE => 'price',
                 self::GTIN => 'gtin',
+                self::PARAMETERS => 'parameters',
             };
     }
 
@@ -83,6 +88,7 @@ enum ProviderCapabilities
                 self::DATASHEET => 'fa-file-alt',
                 self::PRICE => 'fa-money-bill-wave',
                 self::GTIN => 'fa-barcode',
+                self::PARAMETERS => 'fa-list-ul',
             };
     }
 }

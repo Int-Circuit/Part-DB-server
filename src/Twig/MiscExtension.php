@@ -22,19 +22,18 @@ declare(strict_types=1);
  */
 namespace App\Twig;
 
+use App\Services\InfoProviderSystem\CreateFromUrlHelper;
 use Twig\Attribute\AsTwigFunction;
 use App\Settings\SettingsIcon;
 use Symfony\Component\HttpFoundation\Request;
 use App\Services\LogSystem\EventCommentType;
 use Jbtronics\SettingsBundle\Proxy\SettingsProxyInterface;
 use ReflectionClass;
-use Twig\TwigFunction;
 use App\Services\LogSystem\EventCommentNeededHelper;
-use Twig\Extension\AbstractExtension;
 
 final readonly class MiscExtension
 {
-    public function __construct(private EventCommentNeededHelper $eventCommentNeededHelper)
+    public function __construct(private EventCommentNeededHelper $eventCommentNeededHelper, private CreateFromUrlHelper $fromUrlHelper)
     {
     }
 
@@ -83,5 +82,15 @@ final readonly class MiscExtension
         }
 
         return $request->getBaseUrl().$request->getPathInfo().$qs;
+    }
+
+    /**
+     * Returns true if the from url provider is active, false otherwise.
+     * @return bool
+     */
+    #[AsTwigFunction(name: 'create_from_url_active')]
+    public function create_from_url_active(): bool
+    {
+        return $this->fromUrlHelper->canCreateFromUrl();
     }
 }

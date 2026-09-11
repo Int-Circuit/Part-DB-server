@@ -57,9 +57,22 @@ class KiCadEDASettings
     public bool $defaultParameterVisibility = false;
 
     #[SettingsParameter(
+        label: new TM("settings.misc.kicad_eda.default_parameter_symbol_visibility"),
+        description: new TM("settings.misc.kicad_eda.default_parameter_symbol_visibility.help"),
+
+    )]
+    public bool $defaultParameterSymbolVisibility = false;
+
+    #[SettingsParameter(
         label: new TM("settings.misc.kicad_eda.default_orderdetails_visibility"),
         description: new TM("settings.misc.kicad_eda.default_orderdetails_visibility.help"),
 
     )]
     public bool $defaultOrderdetailsVisibility = false;
+
+    #[SettingsParameter(
+        label: new TM("settings.misc.kicad_eda.use_custom_list"),
+        description: new TM("settings.misc.kicad_eda.use_custom_list.help"),
+    )]
+    public bool $useCustomList = false;
 }

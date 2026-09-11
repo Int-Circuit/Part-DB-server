@@ -102,7 +102,18 @@ export default class extends Controller {
             onNodeSelected: (event) => {
                 const node = event.detail.node;
                 if (node.href) {
-                    window.Turbo.visit(node.href, {action: "advance", frame: this._frame});
+                    const url = node.href;
+                    // Turbo.visit with a frame target bypasses turbo:before-visit, so dispatch it
+                    // manually so that dirty-form guards can intercept it.
+                    const beforeVisitEvent = new CustomEvent('turbo:before-visit', {
+                        bubbles: true,
+                        cancelable: true,
+                        detail: { url, frame: this._frame },
+                    });
+                    document.dispatchEvent(beforeVisitEvent);
+                    if (!beforeVisitEvent.defaultPrevented) {
+                        window.Turbo.visit(url, {action: "advance", frame: this._frame});
+                    }
                 }
             },
         }, [BS5Theme, BS53Theme, FAIconTheme]);
@@ -130,14 +141,26 @@ export default class extends Controller {
     }
 
     collapseAll() {
+        //These actions can be triggered (button click / search input) before the tree data has
+        //finished loading asynchronously, at which point this._tree is still null.
+        if (!this._isInitialized()) {
+            return;
+        }
         this._tree.collapseAll({silent: true});
     }
 
     expandAll() {
+        if (!this._isInitialized()) {
+            return;
+        }
         this._tree.expandAll({silent: true});
     }
 
     searchInput(event) {
+        if (!this._isInitialized()) {
+            return;
+        }
+
         const data = event.target.value;
         //Do nothing if no data was passed
 

@@ -389,6 +389,37 @@ final class KiCadHelperTest extends KernelTestCase
 
         self::assertArrayHasKey('Voltage Rating', $result['fields']);
         self::assertSame('3.3 V', $result['fields']['Voltage Rating']['value']);
+        //Without an explicit symbol visibility the field defaults to not being shown in the symbol
+        self::assertSame('False', $result['fields']['Voltage Rating']['visible']);
+    }
+
+    /**
+     * Test that a parameter with eda_symbol_visibility=true is marked visible in the symbol.
+     */
+    public function testParameterWithSymbolVisibilityIsVisibleInSymbol(): void
+    {
+        $category = $this->em->find(Category::class, 1);
+
+        $part = new Part();
+        $part->setName('Part with Symbol-Visible Parameter');
+        $part->setCategory($category);
+
+        $param = new PartParameter();
+        $param->setName('Voltage Rating');
+        $param->setValueTypical(3.3);
+        $param->setUnit('V');
+        $param->setEdaVisibility(true);
+        $param->setEdaSymbolVisibility(true);
+        $part->addParameter($param);
+
+        $this->em->persist($part);
+        $this->em->flush();
+
+        $result = $this->helper->getKiCADPart($part);
+
+        self::assertArrayHasKey('Voltage Rating', $result['fields']);
+        self::assertSame('3.3 V', $result['fields']['Voltage Rating']['value']);
+        self::assertSame('True', $result['fields']['Voltage Rating']['visible']);
     }
 
     /**
@@ -600,5 +631,27 @@ final class KiCadHelperTest extends KernelTestCase
 
         // Empty-named parameter should not appear
         self::assertArrayNotHasKey('', $result['fields']);
+    }
+
+    /**
+     * Category 1 (from fixtures) has a KiCad symbol set, so its parts are visible to the EDA.
+     * The listing must carry the fields, so KiCad does not have to request each part separately.
+     */
+    public function testCategoryPartsListingContainsFields(): void
+    {
+        $category = $this->em->find(Category::class, 1);
+
+        $result = $this->helper->getCategoryParts($category);
+
+        self::assertNotEmpty($result);
+        foreach ($result as $part) {
+            self::assertArrayHasKey('fields', $part);
+            self::assertIsArray($part['fields']);
+            //Every part gets at least these, either from itself or from its category
+            self::assertArrayHasKey('reference', $part['fields']);
+            self::assertArrayHasKey('value', $part['fields']);
+            self::assertArrayHasKey('footprint', $part['fields']);
+            self::assertArrayHasKey('symbolIdStr', $part);
+        }
     }
 }

@@ -28,9 +28,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Twig\Environment;
 
 /**
  * Blocks all web requests when maintenance mode is enabled during updates.
@@ -62,8 +60,8 @@ readonly class MaintenanceModeSubscriber implements EventSubscriberInterface
             return;
         }
 
-        //Allow to view the progress page
-        if (preg_match('#^/\w{2}/system/update-manager/progress#', $event->getRequest()->getPathInfo())) {
+        //Allow to view the progress page and health check endpoint
+        if (preg_match('#^/[a-z]{2}(?:_[A-Z]{2})?/system/update-manager/(progress|health)#', $event->getRequest()->getPathInfo())) {
             return;
         }
 

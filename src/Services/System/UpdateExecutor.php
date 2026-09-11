@@ -24,7 +24,6 @@ declare(strict_types=1);
 namespace App\Services\System;
 
 use Psr\Log\LoggerInterface;
-use Shivas\VersioningBundle\Service\VersionManagerInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
@@ -58,7 +57,7 @@ class UpdateExecutor
         private readonly UpdateChecker $updateChecker,
         private readonly BackupManager $backupManager,
         private readonly CommandRunHelper $commandRunHelper,
-        #[Autowire(param: 'app.debug_mode')]
+        #[Autowire(param: 'kernel.debug')]
         private readonly bool $debugMode = false,
     ) {
     }
@@ -297,6 +296,23 @@ class UpdateExecutor
                 $installType->getLabel(),
                 $installType->getUpdateInstructions()
             );
+        }
+
+        // Docker installations are updated via Watchtower - skip Git/Composer/Yarn checks
+        if ($installType === InstallationType::DOCKER) {
+            // Only check if already locked
+            if ($this->isLocked()) {
+                $lockInfo = $this->getLockInfo();
+                $errors[] = sprintf(
+                    'An update is already in progress (started at %s).',
+                    $lockInfo['started_at'] ?? 'unknown time'
+                );
+            }
+
+            return [
+                'valid' => empty($errors),
+                'errors' => $errors,
+            ];
         }
 
         // Check for Git installation

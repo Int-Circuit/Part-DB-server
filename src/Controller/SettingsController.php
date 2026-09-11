@@ -44,12 +44,15 @@ class SettingsController extends AbstractController
     public function systemSettings(Request $request, TagAwareCacheInterface $cache): Response
     {
         $this->denyAccessUnlessGranted('@config.change_system_settings');
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         //Create a clone of the settings object
         $settings = $this->settingsManager->createTemporaryCopy(AppSettings::class);
 
         //Create a form builder for the settings object
-        $builder = $this->settingsFormFactory->createSettingsFormBuilder($settings);
+        $builder = $this->settingsFormFactory->createSettingsFormBuilder($settings, formOptions: [
+            'warn_on_unsaved_changes' => true,
+        ]);
 
         //Add a submit button to the form
         $builder->add('submit', SubmitType::class, ['label' => 'save']);
