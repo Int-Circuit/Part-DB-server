@@ -23,21 +23,28 @@ declare(strict_types=1);
 
 namespace App\Settings\MiscSettings;
 
+
 use App\Settings\SettingsIcon;
 use Jbtronics\SettingsBundle\Metadata\EnvVarMode;
 use Jbtronics\SettingsBundle\Settings\Settings;
 use Jbtronics\SettingsBundle\Settings\SettingsParameter;
 use Jbtronics\SettingsBundle\Settings\SettingsTrait;
 use Symfony\Component\Translation\TranslatableMessage as TM;
-use Symfony\Component\Validator\Constraints as Assert;
 
-#[Settings(label: new TM("settings.misc.serial"))]
+#[Settings(name: "serial_com", label: new TM("settings.misc.serial"))]
 #[SettingsIcon("fa-bolt-lightning")]
 class SerialComSettings
 {
-    use SettingsTrait;
+    #[SettingsParameter(label: new TM("settings.misc.serial.enable"),
+        description: new TM("settings.misc.serial.enable.help")
+    )]
+    public ?bool $serialEnable = true;
 
-    public bool $defaultParameterVisibility = false;
+    #[SettingsParameter(label: new TM("settings.misc.serial.serial_port"),
+        description: new TM("settings.misc.serial.serial_port.help"),
+        envVar: "SERIAL_PORT", envVarMode: EnvVarMode::OVERWRITE,
+        )]
+    public ?string $serialPort = null;
 
 
 }
